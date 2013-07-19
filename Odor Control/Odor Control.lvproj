@@ -10,7 +10,7 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="Odor Control" Type="Folder" URL="../Odor Control">
+		<Item Name="Odor Control" Type="Folder" URL="..">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="Dependencies" Type="Dependencies">
@@ -223,12 +223,12 @@
 				<Item Name="Write To Spreadsheet File (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write To Spreadsheet File (string).vi"/>
 				<Item Name="Write To Spreadsheet File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write To Spreadsheet File.vi"/>
 			</Item>
-			<Item Name="AlicatInit.vi" Type="VI" URL="../../../LabVIEW/MFC/AlicatLabView7V1/AlicatRead7V1.llb/AlicatInit.vi"/>
-			<Item Name="AlicatWrite7V0.vi" Type="VI" URL="../../../LabVIEW/MFC/AlicatLabView7V1/AlicatWrite7V0.llb/AlicatWrite7V0.vi"/>
+			<Item Name="AlicatInit.vi" Type="VI" URL="../../../../LabVIEW/MFC/AlicatLabView7V1/AlicatRead7V1.llb/AlicatInit.vi"/>
+			<Item Name="AlicatWrite7V0.vi" Type="VI" URL="../../../../LabVIEW/MFC/AlicatLabView7V1/AlicatWrite7V0.llb/AlicatWrite7V0.vi"/>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="ParseAlicatReads.vi" Type="VI" URL="../../../LabVIEW/MFC/ParseAlicatReads.vi"/>
+			<Item Name="ParseAlicatReads.vi" Type="VI" URL="../../../../LabVIEW/MFC/ParseAlicatReads.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
