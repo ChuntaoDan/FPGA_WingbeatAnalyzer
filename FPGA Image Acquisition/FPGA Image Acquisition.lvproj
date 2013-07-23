@@ -16,7 +16,12 @@ Additionally, the example demonstrates the serial server, which allows third-par
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="FPGA Bitfiles" Type="Folder"/>
+		<Item Name="Common" Type="Folder" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
+		<Item Name="FPGA Bitfiles" Type="Folder" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/10-Tap 8-bit Camera with DRAM/FPGA Bitfiles">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="FPGA Image Acquisition" Type="Folder" URL="..">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
@@ -5801,6 +5806,33 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
 				<Item Name="CL Data to Pixels.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels.vi"/>
 				<Item Name="CL Signal Mapping.ctl" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Signal Mapping.ctl"/>
 				<Item Name="Serial Interface.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Serial Interface.vi"/>
+				<Item Name="1 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 8-Bit.vi"/>
+				<Item Name="2 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 8-Bit.vi"/>
+				<Item Name="3 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 8-Bit.vi"/>
+				<Item Name="4 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/4 Tap 8-Bit.vi"/>
+				<Item Name="8 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/8 Tap 8-Bit.vi"/>
+				<Item Name="1 Tap 10-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 10-Bit.vi"/>
+				<Item Name="2 Tap 10-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 10-Bit.vi"/>
+				<Item Name="3 Tap 10-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 10-Bit.vi"/>
+				<Item Name="4 Tap 10-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/4 Tap 10-Bit.vi"/>
+				<Item Name="1 Tap 12-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 12-Bit.vi"/>
+				<Item Name="2 Tap 12-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 12-Bit.vi"/>
+				<Item Name="3 Tap 12-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 12-Bit.vi"/>
+				<Item Name="4 Tap 12-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/4 Tap 12-Bit.vi"/>
+				<Item Name="1 Tap 14-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 14-Bit.vi"/>
+				<Item Name="1 Tap 16-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 16-Bit.vi"/>
+				<Item Name="1 Tap 24-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 24-Bit RGB.vi"/>
+				<Item Name="1 Tap 30-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 30-Bit RGB.vi"/>
+				<Item Name="1 Tap 36-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 36-Bit RGB.vi"/>
+				<Item Name="1 Tap 42-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 42-Bit RGB.vi"/>
+				<Item Name="1 Tap 48-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 48-Bit RGB.vi"/>
+				<Item Name="2 Tap 16-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 16-Bit.vi"/>
+				<Item Name="2 Tap 14-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 14-Bit.vi"/>
+				<Item Name="3 Tap 14-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 14-Bit.vi"/>
+				<Item Name="3 Tap 16-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 16-Bit.vi"/>
+				<Item Name="2 Tap 24-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 24-Bit RGB.vi"/>
+				<Item Name="Rising Edge Detect.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Rising Edge Detect.vi"/>
+				<Item Name="Counter.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Counter.vi"/>
 				<Item Name="niFpgaSctlEmulationGetInTimedLoop.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Emulation/niFpgaSctlEmulationGetInTimedLoop.vi"/>
 				<Item Name="niFpgaSetErrorForExecOnDevCompSimple.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niFpgaSetErrorForExecOnDevCompSimple.vi"/>
 				<Item Name="niFpgaGetScratchAppInstance.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/common/niFpgaGetScratchAppInstance.vi"/>
@@ -5837,33 +5869,6 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
 				<Item Name="niFpgaSctlEmulationGlobalWrite.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Emulation/niFpgaSctlEmulationGlobalWrite.vi"/>
 				<Item Name="niFpgaSctlEmulationRegisterWithScheduler.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Emulation/niFpgaSctlEmulationRegisterWithScheduler.vi"/>
 				<Item Name="niFpgaEmulationVisToLoad.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Emulation/niFpgaEmulationVisToLoad.vi"/>
-				<Item Name="1 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 8-Bit.vi"/>
-				<Item Name="2 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 8-Bit.vi"/>
-				<Item Name="3 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 8-Bit.vi"/>
-				<Item Name="4 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/4 Tap 8-Bit.vi"/>
-				<Item Name="8 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/8 Tap 8-Bit.vi"/>
-				<Item Name="1 Tap 10-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 10-Bit.vi"/>
-				<Item Name="2 Tap 10-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 10-Bit.vi"/>
-				<Item Name="3 Tap 10-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 10-Bit.vi"/>
-				<Item Name="4 Tap 10-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/4 Tap 10-Bit.vi"/>
-				<Item Name="1 Tap 12-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 12-Bit.vi"/>
-				<Item Name="2 Tap 12-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 12-Bit.vi"/>
-				<Item Name="3 Tap 12-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 12-Bit.vi"/>
-				<Item Name="4 Tap 12-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/4 Tap 12-Bit.vi"/>
-				<Item Name="1 Tap 14-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 14-Bit.vi"/>
-				<Item Name="1 Tap 16-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 16-Bit.vi"/>
-				<Item Name="1 Tap 24-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 24-Bit RGB.vi"/>
-				<Item Name="1 Tap 30-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 30-Bit RGB.vi"/>
-				<Item Name="1 Tap 36-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 36-Bit RGB.vi"/>
-				<Item Name="1 Tap 42-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 42-Bit RGB.vi"/>
-				<Item Name="1 Tap 48-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 48-Bit RGB.vi"/>
-				<Item Name="2 Tap 16-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 16-Bit.vi"/>
-				<Item Name="2 Tap 14-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 14-Bit.vi"/>
-				<Item Name="3 Tap 14-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 14-Bit.vi"/>
-				<Item Name="3 Tap 16-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 16-Bit.vi"/>
-				<Item Name="2 Tap 24-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 24-Bit RGB.vi"/>
-				<Item Name="Rising Edge Detect.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Rising Edge Detect.vi"/>
-				<Item Name="Counter.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Counter.vi"/>
 			</Item>
 			<Item Name="Build Specifications" Type="Build">
 				<Item Name="10-Tap 8-bit Camera with DRAM (FPGA)" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
@@ -5936,44 +5941,9 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
 				<Item Name="IMAQ Create" Type="VI" URL="/&lt;vilib&gt;/vision/Basics.llb/IMAQ Create"/>
 				<Item Name="IMAQ Dispose" Type="VI" URL="/&lt;vilib&gt;/vision/Basics.llb/IMAQ Dispose"/>
 				<Item Name="IMAQ Image.ctl" Type="VI" URL="/&lt;vilib&gt;/vision/Image Controls.llb/IMAQ Image.ctl"/>
+				<Item Name="Search and Replace Pattern.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Search and Replace Pattern.vi"/>
 				<Item Name="Simple Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Simple Error Handler.vi"/>
 			</Item>
-			<Item Name="1 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 8-Bit.vi"/>
-			<Item Name="1 Tap 10-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 10-Bit.vi"/>
-			<Item Name="1 Tap 12-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 12-Bit.vi"/>
-			<Item Name="1 Tap 14-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 14-Bit.vi"/>
-			<Item Name="1 Tap 16-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 16-Bit.vi"/>
-			<Item Name="1 Tap 24-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 24-Bit RGB.vi"/>
-			<Item Name="1 Tap 30-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 30-Bit RGB.vi"/>
-			<Item Name="1 Tap 36-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 36-Bit RGB.vi"/>
-			<Item Name="1 Tap 42-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 42-Bit RGB.vi"/>
-			<Item Name="1 Tap 48-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 48-Bit RGB.vi"/>
-			<Item Name="2 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 8-Bit.vi"/>
-			<Item Name="2 Tap 10-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 10-Bit.vi"/>
-			<Item Name="2 Tap 12-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 12-Bit.vi"/>
-			<Item Name="2 Tap 14-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 14-Bit.vi"/>
-			<Item Name="2 Tap 16-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 16-Bit.vi"/>
-			<Item Name="2 Tap 24-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 24-Bit RGB.vi"/>
-			<Item Name="3 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 8-Bit.vi"/>
-			<Item Name="3 Tap 10-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 10-Bit.vi"/>
-			<Item Name="3 Tap 12-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 12-Bit.vi"/>
-			<Item Name="3 Tap 14-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 14-Bit.vi"/>
-			<Item Name="3 Tap 16-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 16-Bit.vi"/>
-			<Item Name="4 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/4 Tap 8-Bit.vi"/>
-			<Item Name="4 Tap 10-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/4 Tap 10-Bit.vi"/>
-			<Item Name="4 Tap 12-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/4 Tap 12-Bit.vi"/>
-			<Item Name="8 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/8 Tap 8-Bit.vi"/>
-			<Item Name="10 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/10 Tap 8-Bit.vi"/>
-			<Item Name="10-Tap8-bitwith_DRAM.lvbitx" Type="Document" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/10-Tap 8-bit Camera with DRAM/FPGA Bitfiles/10-Tap8-bitwith_DRAM.lvbitx"/>
-			<Item Name="Acquisition State Machine.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Acquisition State Machine.vi"/>
-			<Item Name="CL Configuration.ctl" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Configuration.ctl"/>
-			<Item Name="CL Data to Pixels.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels.vi"/>
-			<Item Name="CL Signal Mapping.ctl" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Signal Mapping.ctl"/>
-			<Item Name="Counter.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Counter.vi"/>
-			<Item Name="FPGA_UART_ChangeBaudRate.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Serial/FPGA_UART.llb/FPGA_UART_ChangeBaudRate.vi"/>
-			<Item Name="FPGA_UART_Interface.ctl" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Serial/FPGA_UART.llb/FPGA_UART_Interface.ctl"/>
-			<Item Name="FPGA_UART_ReadByte.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Serial/FPGA_UART.llb/FPGA_UART_ReadByte.vi"/>
-			<Item Name="FPGA_UART_WriteByte.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Serial/FPGA_UART.llb/FPGA_UART_WriteByte.vi"/>
 			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -5983,9 +5953,6 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
 			<Item Name="nivissvc.dll" Type="Document" URL="nivissvc.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Rising Edge Detect.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Rising Edge Detect.vi"/>
-			<Item Name="Serial Interface.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Serial Interface.vi"/>
-			<Item Name="SerialServer.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Serial/SerialServer.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
