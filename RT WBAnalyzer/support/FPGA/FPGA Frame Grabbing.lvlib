@@ -6,5 +6,5 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">318799872</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
-	<Item Name="FPGA Single Frame Acquisition (Host).vi" Type="VI" URL="../FPGA Single Frame Acquisition (Host).vi"/>
+	<Item Name="FPGA Frame Grabbing (Host).vi" Type="VI" URL="../FPGA Frame Grabbing (Host).vi"/>
 </Library>
