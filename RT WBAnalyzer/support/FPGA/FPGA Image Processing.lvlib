@@ -7,5 +7,6 @@
 	<Item Name="Accumulate Wing Sector Pixel Values (FPGA).vi" Type="VI" URL="../Accumulate Wing Sector Pixel Values (FPGA).vi"/>
 	<Item Name="Assign Pixel to Wing Sector (FPGA).vi" Type="VI" URL="../Assign Pixel to Wing Sector (FPGA).vi"/>
 	<Item Name="Convert TickNum to XY (FPGA).vi" Type="VI" URL="../Convert TickNum to XY (FPGA).vi"/>
-	<Item Name="FPGA Image Processing (FPGA).vi" Type="VI" URL="../FPGA Image Processing (FPGA).vi"/>
+	<Item Name="Edge Detection (FPGA).vi" Type="VI" URL="../Edge Detection (FPGA).vi"/>
+	<Item Name="Wingbeat Amplitude Extraction (FPGA).vi" Type="VI" URL="../Wingbeat Amplitude Extraction (FPGA).vi"/>
 </Library>
