@@ -7,6 +7,14 @@ This example also demonstrates the use of DRAM as a frame buffer for very high s
 
 Additionally, the example demonstrates the serial server, which allows third-party camera configuration utilities to communicate with the camera using the Camera Link serial interface while this VI is running.</Property>
 	<Item Name="My Computer" Type="My Computer">
+		<Property Name="IOScan.Faults" Type="Str"></Property>
+		<Property Name="IOScan.NetVarPeriod" Type="UInt">100</Property>
+		<Property Name="IOScan.NetWatchdogEnabled" Type="Bool">false</Property>
+		<Property Name="IOScan.Period" Type="UInt">10000</Property>
+		<Property Name="IOScan.PowerupMode" Type="UInt">0</Property>
+		<Property Name="IOScan.Priority" Type="UInt">9</Property>
+		<Property Name="IOScan.ReportModeConflict" Type="Bool">true</Property>
+		<Property Name="IOScan.StartEngineOnDeploy" Type="Bool">false</Property>
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="server.control.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="server.tcp.enabled" Type="Bool">false</Property>
@@ -16,12 +24,8 @@ Additionally, the example demonstrates the serial server, which allows third-par
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="Common" Type="Folder" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
-		</Item>
-		<Item Name="FPGA Bitfiles" Type="Folder" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/10-Tap 8-bit Camera with DRAM/FPGA Bitfiles">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
-		</Item>
+		<Item Name="Common" Type="Folder"/>
+		<Item Name="FPGA Bitfiles" Type="Folder"/>
 		<Item Name="FPGA Image Acquisition" Type="Folder" URL="..">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
@@ -1538,7 +1542,7 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
             <RelativeToLabVIEW>C:\Users\Chuntao\LabVIEW\Vision-RIO\Vision-RIO\Common\CLIPs\Pack256To64.xml</RelativeToLabVIEW>
             <RelativeToNiPubDocs>C:\Users\Chuntao\LabVIEW\Vision-RIO\Vision-RIO\Common\CLIPs\Pack256To64.xml</RelativeToNiPubDocs>
             <RelativeToNiSharedDir>..\..\..\Users\Chuntao\LabVIEW\Vision-RIO\Vision-RIO\Common\CLIPs\Pack256To64.xml</RelativeToNiSharedDir>
-            <RelativeToProject>..\..\..\LabVIEW\Vision-RIO\Vision-RIO\Common\CLIPs\Pack256To64.xml</RelativeToProject>
+            <RelativeToProject>..\..\..\..\Chuntao\LabVIEW\Vision-RIO\Vision-RIO\Common\CLIPs\Pack256To64.xml</RelativeToProject>
             <Valid>true</Valid>
          </DeclarationPaths>
          <FormatVersion>1.1</FormatVersion>
@@ -1676,7 +1680,7 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
             <RelativeToLabVIEW>C:\Users\Chuntao\LabVIEW\Vision-RIO\Vision-RIO\Common\CLIPs\Pack80To256.xml</RelativeToLabVIEW>
             <RelativeToNiPubDocs>C:\Users\Chuntao\LabVIEW\Vision-RIO\Vision-RIO\Common\CLIPs\Pack80To256.xml</RelativeToNiPubDocs>
             <RelativeToNiSharedDir>..\..\..\Users\Chuntao\LabVIEW\Vision-RIO\Vision-RIO\Common\CLIPs\Pack80To256.xml</RelativeToNiSharedDir>
-            <RelativeToProject>..\..\..\LabVIEW\Vision-RIO\Vision-RIO\Common\CLIPs\Pack80To256.xml</RelativeToProject>
+            <RelativeToProject>..\..\..\..\Chuntao\LabVIEW\Vision-RIO\Vision-RIO\Common\CLIPs\Pack80To256.xml</RelativeToProject>
             <Valid>true</Valid>
          </DeclarationPaths>
          <FormatVersion>1.1</FormatVersion>
@@ -5809,33 +5813,6 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
 				<Item Name="CL Data to Pixels.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels.vi"/>
 				<Item Name="CL Signal Mapping.ctl" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Signal Mapping.ctl"/>
 				<Item Name="Serial Interface.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Serial Interface.vi"/>
-				<Item Name="1 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 8-Bit.vi"/>
-				<Item Name="2 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 8-Bit.vi"/>
-				<Item Name="3 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 8-Bit.vi"/>
-				<Item Name="4 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/4 Tap 8-Bit.vi"/>
-				<Item Name="8 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/8 Tap 8-Bit.vi"/>
-				<Item Name="1 Tap 10-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 10-Bit.vi"/>
-				<Item Name="2 Tap 10-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 10-Bit.vi"/>
-				<Item Name="3 Tap 10-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 10-Bit.vi"/>
-				<Item Name="4 Tap 10-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/4 Tap 10-Bit.vi"/>
-				<Item Name="1 Tap 12-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 12-Bit.vi"/>
-				<Item Name="2 Tap 12-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 12-Bit.vi"/>
-				<Item Name="3 Tap 12-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 12-Bit.vi"/>
-				<Item Name="4 Tap 12-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/4 Tap 12-Bit.vi"/>
-				<Item Name="1 Tap 14-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 14-Bit.vi"/>
-				<Item Name="1 Tap 16-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 16-Bit.vi"/>
-				<Item Name="1 Tap 24-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 24-Bit RGB.vi"/>
-				<Item Name="1 Tap 30-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 30-Bit RGB.vi"/>
-				<Item Name="1 Tap 36-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 36-Bit RGB.vi"/>
-				<Item Name="1 Tap 42-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 42-Bit RGB.vi"/>
-				<Item Name="1 Tap 48-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/1 Tap 48-Bit RGB.vi"/>
-				<Item Name="2 Tap 16-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 16-Bit.vi"/>
-				<Item Name="2 Tap 14-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 14-Bit.vi"/>
-				<Item Name="3 Tap 14-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 14-Bit.vi"/>
-				<Item Name="3 Tap 16-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/3 Tap 16-Bit.vi"/>
-				<Item Name="2 Tap 24-Bit RGB.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/2 Tap 24-Bit RGB.vi"/>
-				<Item Name="Rising Edge Detect.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Rising Edge Detect.vi"/>
-				<Item Name="Counter.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Counter.vi"/>
 				<Item Name="niFpgaGetScratchAppInstance.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/common/niFpgaGetScratchAppInstance.vi"/>
 				<Item Name="nirviEmuReportErrorAndStop.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/common/nirviEmuReportErrorAndStop.vi"/>
 				<Item Name="niFpgaSetErrorForExecOnDevCompSimple.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niFpgaSetErrorForExecOnDevCompSimple.vi"/>
@@ -5973,15 +5950,44 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
+			<Item Name="10 Tap 8-Bit.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels/10 Tap 8-Bit.vi"/>
+			<Item Name="10-Tap8-bitwith_DRAM.lvbitx" Type="Document" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/10-Tap 8-bit Camera with DRAM/FPGA Bitfiles/10-Tap8-bitwith_DRAM.lvbitx"/>
+			<Item Name="Acquisition State Machine.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Acquisition State Machine.vi"/>
+			<Item Name="CL Configuration.ctl" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Configuration.ctl"/>
+			<Item Name="CL Data to Pixels.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Data to Pixels.vi"/>
+			<Item Name="CL Signal Mapping.ctl" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/CL Signal Mapping.ctl"/>
+			<Item Name="niFpgaDynamicAddResources.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/interface/common/dynamic/niFpgaDynamicAddResources.vi"/>
+			<Item Name="niFpgaHostInterfaceSession.ctl" Type="VI" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2013/Targets/NI/FPGA/StockFPGA_IntfPrivate/ScriptTemplates/niFpgaHostInterfaceSession.ctl"/>
 			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="niFpgaNodeNameForErrorReporting.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/interface/common/niFpgaNodeNameForErrorReporting.ctl"/>
+			<Item Name="niFpgaSimulationCallBeginRW.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/interface/Simulation/niFpgaSimulationCallBeginRW.vi"/>
+			<Item Name="niFpgaWaitOnOcc.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/interface/common/niFpgaWaitOnOcc.vi"/>
+			<Item Name="niLvFpga_Close_Dynamic.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/Dynamic/niLvFpga_Close_Dynamic.vi"/>
+			<Item Name="niLvFpga_ConfigureFifo_Dynamic.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/Dynamic/niLvFpga_ConfigureFifo_Dynamic.vi"/>
+			<Item Name="niLvFpga_Open_PCIe-1473R.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/PCIe-1473R/niLvFpga_Open_PCIe-1473R.vi"/>
+			<Item Name="niLvFpga_ReadFifo_Dynamic.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/Dynamic/niLvFpga_ReadFifo_Dynamic.vi"/>
+			<Item Name="niLvFpga_Reset_Dynamic.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/Dynamic/niLvFpga_Reset_Dynamic.vi"/>
+			<Item Name="niLvFpga_Run_Dynamic.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/Dynamic/niLvFpga_Run_Dynamic.vi"/>
+			<Item Name="niLvFpga_StartFifo_Dynamic.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/Dynamic/niLvFpga_StartFifo_Dynamic.vi"/>
+			<Item Name="niLvFpgaAdjustHostInterfaceError.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaAdjustHostInterfaceError.vi"/>
+			<Item Name="niLvFpgaErrorClusterFromErrorCode.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaErrorClusterFromErrorCode.vi"/>
+			<Item Name="niLvFpgaFormatErrorSource.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaFormatErrorSource.vi"/>
+			<Item Name="niLvFpgaMergeErrorWithErrorCode.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaMergeErrorWithErrorCode.vi"/>
+			<Item Name="niLvFpgaWhatHappensToTopLevelVI.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaWhatHappensToTopLevelVI.ctl"/>
+			<Item Name="nirio_resource_hc.ctl" Type="VI" URL="/&lt;vilib&gt;/userdefined/High Color/nirio_resource_hc.ctl"/>
+			<Item Name="nirviErrorClusterFromErrorCode.vi" Type="VI" URL="/&lt;vilib&gt;/RVI Host/nirviSupport.llb/nirviErrorClusterFromErrorCode.vi"/>
+			<Item Name="nirviWhatTheDeviceIsDoing.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/ClientSDK/nirviWhatTheDeviceIsDoing.ctl"/>
 			<Item Name="nivision.dll" Type="Document" URL="nivision.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="nivissvc.dll" Type="Document" URL="nivissvc.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Rising Edge Detect.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Rising Edge Detect.vi"/>
+			<Item Name="Serial Interface.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Serial Interface.vi"/>
+			<Item Name="SerialServer.vi" Type="VI" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/Common/Serial/SerialServer.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
