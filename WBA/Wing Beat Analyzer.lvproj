@@ -2807,6 +2807,9 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
 			<Item Name="Test Compiliation" Type="Folder" URL="../Test Compiliation">
 				<Property Name="NI.DISK" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Test" Type="Folder" URL="../Test">
+				<Property Name="NI.DISK" Type="Bool">true</Property>
+			</Item>
 			<Item Name="40 MHz Onboard Clock" Type="FPGA Base Clock">
 				<Property Name="FPGA.PersistentID" Type="Str">{4AC2EC37-CF15-49B9-9580-6A93E8090239}</Property>
 				<Property Name="NI.LV.FPGA.BaseTSConfig" Type="Str">ResourceName=40 MHz Onboard Clock;TopSignalConnect=RioClk40;ClockSignalName=RioClk40;MinFreq=40000000.000000;MaxFreq=40000000.000000;VariableFreq=0;NomFreq=40000000.000000;PeakPeriodJitter=250.000000;MinDutyCycle=50.000000;MaxDutyCycle=50.000000;Accuracy=100.000000;RunTime=0;SpreadSpectrum=0;GenericDataHash=D41D8CD98F00B204E9800998ECF8427E</Property>
@@ -4985,6 +4988,10 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
 					<Item Name="IMAQ AVI2 Get Info" Type="VI" URL="/&lt;vilib&gt;/vision/Avi.llb/IMAQ AVI2 Get Info"/>
 					<Item Name="IMAQ AVI2 Read Frame" Type="VI" URL="/&lt;vilib&gt;/vision/Avi.llb/IMAQ AVI2 Read Frame"/>
 					<Item Name="IMAQ AVI2 Close" Type="VI" URL="/&lt;vilib&gt;/vision/Avi.llb/IMAQ AVI2 Close"/>
+					<Item Name="IMAQ AVI2 Get Codec Names" Type="VI" URL="/&lt;vilib&gt;/vision/Avi.llb/IMAQ AVI2 Get Codec Names"/>
+					<Item Name="IMAQ AVI2 Create" Type="VI" URL="/&lt;vilib&gt;/vision/Avi.llb/IMAQ AVI2 Create"/>
+					<Item Name="IMAQ AVI2 Write Frame" Type="VI" URL="/&lt;vilib&gt;/vision/Avi.llb/IMAQ AVI2 Write Frame"/>
+					<Item Name="IMAQ Overlay ROI" Type="VI" URL="/&lt;vilib&gt;/vision/Overlay.llb/IMAQ Overlay ROI"/>
 				</Item>
 				<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
 					<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
@@ -5030,6 +5037,10 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
 				<Item Name="Load Simulation AVI.vi" Type="VI" URL="../Host/Simulation/Load Simulation AVI.vi"/>
 				<Item Name="Tick Count Reset.vi" Type="VI" URL="../FPGA/Globals/Tick Count Reset.vi"/>
 				<Item Name="Tick Count.vi" Type="VI" URL="../FPGA/Globals/Tick Count.vi"/>
+				<Item Name="Average Sector Data.vi" Type="VI" URL="../Host/Globals/Average Sector Data.vi"/>
+				<Item Name="Status FG.vi" Type="VI" URL="../Host/System Status/Status FG.vi"/>
+				<Item Name="Status FG Enum.ctl" Type="VI" URL="../Host/System Status/Status FG Enum.ctl"/>
+				<Item Name="WingBeatAnalyzer_FPGATargetSim_10_2.lvbitx" Type="Document" URL="../FPGA Bitfiles/WingBeatAnalyzer_FPGATargetSim_10_2.lvbitx"/>
 				<Item Name="Processed Data.ctl" Type="VI" URL="/&lt;vilib&gt;/Native 3D Graph/xcontrol/Processed Data.ctl"/>
 				<Item Name="find_vertex_min_max.vi" Type="VI" URL="/&lt;vilib&gt;/Native 3D Graph/find_vertex_min_max.vi"/>
 				<Item Name="make_color_index_array.vi" Type="VI" URL="/&lt;vilib&gt;/Native 3D Graph/make_color_index_array.vi"/>
@@ -5062,8 +5073,7 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
 				<Item Name="nirvififoEmulationCreateLock.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/FIFO/Fifo_Resource/nirvififoEmulationCreateLock.vi"/>
 				<Item Name="nirviWaitOnOccurrenceBase.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/occurrence/nirviWaitOnOccurrenceBase.vi"/>
 				<Item Name="niFpgaEmulationVisToLoad.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Emulation/niFpgaEmulationVisToLoad.vi"/>
-				<Item Name="WingBeatAnalyzer_FPGATargetSim_10_2.lvbitx" Type="Document" URL="../FPGA Bitfiles/WingBeatAnalyzer_FPGATargetSim_10_2.lvbitx"/>
-				<Item Name="Average Sector Data.vi" Type="VI" URL="../Host/Globals/Average Sector Data.vi"/>
+				<Item Name="Test Sector Cluster.ctl" Type="VI" URL="../Test/Test Compiliation/Test Sector Cluster.ctl"/>
 			</Item>
 			<Item Name="Build Specifications" Type="Build">
 				<Item Name="10-Tap 8-bit Camera with DRAM (FPGA)" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
@@ -5606,7 +5616,7 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
 		</Item>
 		<Item Name="FPGA Target Sim" Type="FPGA Target">
 			<Property Name="AutoRun" Type="Bool">false</Property>
-			<Property Name="configString.guid" Type="Str">{0BB1AFBD-AD9E-4BDA-B766-1D06DD800FFC}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 3;0;WriteMethodType=U64{17A82158-55CD-4486-8CFC-FE79263252D9}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Output Valid;0;ReadMethodType=bool{1C34F8C8-9453-4BB0-B765-3CDD36E2B87A}ResourceName=40 MHz Onboard Clock;TopSignalConnect=Clk40;ClockSignalName=Clk40;MinFreq=40000000.000000;MaxFreq=40000000.000000;VariableFreq=0;NomFreq=40000000.000000;PeakPeriodJitter=250.000000;MinDutyCycle=50.000000;MaxDutyCycle=50.000000;Accuracy=100.000000;RunTime=0;SpreadSpectrum=0;GenericDataHash=D41D8CD98F00B204E9800998ECF8427E{1C5B6C30-FFA5-458E-83C4-E9339FF0E99E}Multiplier=19.000000;Divisor=8.000000{2BFA17EE-A1A4-4092-B7E1-D245DCF62072}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Write Enable;0;WriteMethodType=bool{3B1860FA-3BF3-41C5-85AD-4C753D569DCB}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 0;0;WriteMethodType=U64{3D2B433D-BD36-4D9C-AEFF-FB99E0D8964A}"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000003000F40050008536563746F7220230000114005000B506978656C2056616C7565002040500002000000011453696E676C6520536563746F7220506978656C200000010002000000000000;DisableOnOverflowUnderflow=FALSE"{3D7BF3FA-C817-4768-8B1F-554A9C4832C7}44e223c72bbffc5b07658af642211b28e84e094a0fe058883c03d59b4df079ac&lt;Array&gt;
+			<Property Name="configString.guid" Type="Str">{0BB1AFBD-AD9E-4BDA-B766-1D06DD800FFC}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 3;0;WriteMethodType=U64{17A82158-55CD-4486-8CFC-FE79263252D9}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Output Valid;0;ReadMethodType=bool{1C34F8C8-9453-4BB0-B765-3CDD36E2B87A}ResourceName=40 MHz Onboard Clock;TopSignalConnect=Clk40;ClockSignalName=Clk40;MinFreq=40000000.000000;MaxFreq=40000000.000000;VariableFreq=0;NomFreq=40000000.000000;PeakPeriodJitter=250.000000;MinDutyCycle=50.000000;MaxDutyCycle=50.000000;Accuracy=100.000000;RunTime=0;SpreadSpectrum=0;GenericDataHash=D41D8CD98F00B204E9800998ECF8427E{1C5B6C30-FFA5-458E-83C4-E9339FF0E99E}Multiplier=9.000000;Divisor=4.000000{2BFA17EE-A1A4-4092-B7E1-D245DCF62072}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Write Enable;0;WriteMethodType=bool{3B1860FA-3BF3-41C5-85AD-4C753D569DCB}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 0;0;WriteMethodType=U64{3D2B433D-BD36-4D9C-AEFF-FB99E0D8964A}"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000003000F40050008536563746F7220230000114005000B506978656C2056616C7565002040500002000000011453696E676C6520536563746F7220506978656C200000010002000000000000;DisableOnOverflowUnderflow=FALSE"{3D7BF3FA-C817-4768-8B1F-554A9C4832C7}44e223c72bbffc5b07658af642211b28e84e094a0fe058883c03d59b4df079ac&lt;Array&gt;
 &lt;Name&gt;Generics&lt;/Name&gt;
 &lt;Dimsize&gt;0&lt;/Dimsize&gt;
 &lt;Cluster&gt;
@@ -5676,7 +5686,7 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
 &lt;NumElts&gt;3&lt;/NumElts&gt;
 &lt;String&gt;
 &lt;Name&gt;Name&lt;/Name&gt;
-&lt;Val&gt;95MHz&lt;/Val&gt;
+&lt;Val&gt;90MHz&lt;/Val&gt;
 &lt;/String&gt;
 &lt;Boolean&gt;
 &lt;Name&gt;Use Top Clock&lt;/Name&gt;
@@ -5759,7 +5769,7 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
 &lt;NumElts&gt;3&lt;/NumElts&gt;
 &lt;String&gt;
 &lt;Name&gt;Name&lt;/Name&gt;
-&lt;Val&gt;95MHz&lt;/Val&gt;
+&lt;Val&gt;90MHz&lt;/Val&gt;
 &lt;/String&gt;
 &lt;Boolean&gt;
 &lt;Name&gt;Use Top Clock&lt;/Name&gt;
@@ -5773,7 +5783,7 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
 &lt;/Cluster&gt;
 &lt;/Array&gt;
 {85B8F5A4-A89E-4C19-B912-99E910C411FB}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Output Valid;0;ReadMethodType=bool{88F3FACA-F411-456C-83DC-38A63CEE8F5B}"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094006000355313600010000000000000000;DisableOnOverflowUnderflow=FALSE"{8CC95475-554A-4B9B-8A28-A836F194941C}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 2;0;WriteMethodType=U64{8DF05848-C296-4185-9E79-7BAF0105BB33}"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000003000F40050008536563746F7220230000114005000B506978656C2056616C7565002040500002000000011453696E676C6520536563746F7220506978656C200000010002000000000000;DisableOnOverflowUnderflow=FALSE"{95C8CF3B-953B-4742-ABCD-8346C8DF32B1}"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"{965D85E8-7C43-4920-BAD6-1C9B08E251ED}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Ready for Write;0;ReadMethodType=bool{98AD70CD-D95B-4E00-B789-5531BA653AA1}"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"{9A4616C7-67DD-4E36-89DE-DF021EA7D810}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Data Out 64;0;ReadMethodType=U64{9C1E9CE4-B1AC-49DE-A905-84E4020158D4}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 0;0;ReadMethodType=U64{A27BAA25-049C-48F5-9D29-65EBB80A4011}Actual Number of Elements=32;ReadArbs=1;WriteArbs=1;Implementation=2;DataType=1000800000000003001B40070015416363756D756C6174656420496E74656E73697479000B40060005436F756E74002640500002000000011A416363756D756C6174656420536563746F7220436C7573746572000001000200000000000000000000;InitDataHash=;DRAM Selection=DramBank0;DRAM Max Outstanding Requests=32;DRAM Include Byte Enables=FALSE;DRAM Grant Time=50;Interface Configuration=Read A-Write B;Multiple Clock Domains=FALSE{BC698242-FD79-4244-B897-27454684E7D3}"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000001000940050002553800000100000000000000;DisableOnOverflowUnderflow=FALSE"{BCACC1F6-8E48-4C6D-A094-8FCCE02FC366}"ControlLogic=0;NumberOfElements=517;Type=1;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Target Sim Image 64;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"{C46D9730-AF25-4C8C-BB74-65DB7E032036}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Data In Upper 16;0;WriteMethodType=U16{CC4ACDEB-8A07-450F-8E30-E9B235EEFDF3}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Write Enable;0;WriteMethodType=bool{DC839FDA-1C4E-4D8D-BD99-CC17692C6975}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Read Enable;0;WriteMethodType=bool{ECF75280-348B-4B37-A696-C1B287B6D2E5}"ControlLogic=0;NumberOfElements=517;Type=1;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Target Sim Image 16;DataType=100080000000000100094006000355313600010000000000000000;DisableOnOverflowUnderflow=FALSE"{F5D0F497-ACDF-487C-A19D-CC81C25DDAEE}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Ready For Write;0;ReadMethodType=bool{FB8DCA12-2094-48D6-BADE-068AA8C105D0}"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000003000F40050008536563746F7220230000114005000B506978656C2056616C7565002040500002000000011453696E676C6520536563746F7220506978656C200000010002000000000000;DisableOnOverflowUnderflow=FALSE"PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7842RFPGA_TARGET_FAMILYVIRTEX5TARGET_TYPEFPGA/[rSeriesConfig.Begin][rSeriesConfig.End]</Property>
-			<Property Name="configString.name" Type="Str">40 MHz Onboard ClockResourceName=40 MHz Onboard Clock;TopSignalConnect=Clk40;ClockSignalName=Clk40;MinFreq=40000000.000000;MaxFreq=40000000.000000;VariableFreq=0;NomFreq=40000000.000000;PeakPeriodJitter=250.000000;MinDutyCycle=50.000000;MaxDutyCycle=50.000000;Accuracy=100.000000;RunTime=0;SpreadSpectrum=0;GenericDataHash=D41D8CD98F00B204E9800998ECF8427E95MHzMultiplier=19.000000;Divisor=8.000000Accumulated Sector IntensityActual Number of Elements=32;ReadArbs=1;WriteArbs=1;Implementation=2;DataType=1000800000000003001B40070015416363756D756C6174656420496E74656E73697479000B40060005436F756E74002640500002000000011A416363756D756C6174656420536563746F7220436C7573746572000001000200000000000000000000;InitDataHash=;DRAM Selection=DramBank0;DRAM Max Outstanding Requests=32;DRAM Include Byte Enables=FALSE;DRAM Grant Time=50;Interface Configuration=Read A-Write B;Multiple Clock Domains=FALSEAverage Sector FIFO"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000001000940050002553800000100000000000000;DisableOnOverflowUnderflow=FALSE"Cam Data 16"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094006000355313600010000000000000000;DisableOnOverflowUnderflow=FALSE"Cam Data 64"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"Data In 0ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 0;0;WriteMethodType=U64Data In 1ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 1;0;WriteMethodType=U64Data In 2ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 2;0;WriteMethodType=U64Data In 3ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 3;0;WriteMethodType=U64Data In Lower 64ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Data In Lower 64;0;WriteMethodType=U64Data In Upper 16ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Data In Upper 16;0;WriteMethodType=U16Data Out 0NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 0;0;ReadMethodType=U64Data Out 1NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 1;0;ReadMethodType=U64Data Out 2NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 2;0;ReadMethodType=U64Data Out 3NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 3;0;ReadMethodType=U64Data Out 64NumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Data Out 64;0;ReadMethodType=U64Host DMA 64"ControlLogic=0;NumberOfElements=2047;Type=2;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Host DMA 64;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"Host DMA Average Sector Intensity"ControlLogic=0;NumberOfElements=63;Type=2;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Host DMA Average Sector Intensity;DataType=1000800000000001000940050002553800000100000000000000;DisableOnOverflowUnderflow=FALSE"Output ValidNumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Output Valid;0;ReadMethodType=boolOutput ValidNumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Output Valid;0;ReadMethodType=boolPack 256 To 6444e223c72bbffc5b07658af642211b28e84e094a0fe058883c03d59b4df079ac&lt;Array&gt;
+			<Property Name="configString.name" Type="Str">40 MHz Onboard ClockResourceName=40 MHz Onboard Clock;TopSignalConnect=Clk40;ClockSignalName=Clk40;MinFreq=40000000.000000;MaxFreq=40000000.000000;VariableFreq=0;NomFreq=40000000.000000;PeakPeriodJitter=250.000000;MinDutyCycle=50.000000;MaxDutyCycle=50.000000;Accuracy=100.000000;RunTime=0;SpreadSpectrum=0;GenericDataHash=D41D8CD98F00B204E9800998ECF8427E90MHzMultiplier=9.000000;Divisor=4.000000Accumulated Sector IntensityActual Number of Elements=32;ReadArbs=1;WriteArbs=1;Implementation=2;DataType=1000800000000003001B40070015416363756D756C6174656420496E74656E73697479000B40060005436F756E74002640500002000000011A416363756D756C6174656420536563746F7220436C7573746572000001000200000000000000000000;InitDataHash=;DRAM Selection=DramBank0;DRAM Max Outstanding Requests=32;DRAM Include Byte Enables=FALSE;DRAM Grant Time=50;Interface Configuration=Read A-Write B;Multiple Clock Domains=FALSEAverage Sector FIFO"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000001000940050002553800000100000000000000;DisableOnOverflowUnderflow=FALSE"Cam Data 16"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094006000355313600010000000000000000;DisableOnOverflowUnderflow=FALSE"Cam Data 64"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"Data In 0ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 0;0;WriteMethodType=U64Data In 1ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 1;0;WriteMethodType=U64Data In 2ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 2;0;WriteMethodType=U64Data In 3ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 3;0;WriteMethodType=U64Data In Lower 64ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Data In Lower 64;0;WriteMethodType=U64Data In Upper 16ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Data In Upper 16;0;WriteMethodType=U16Data Out 0NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 0;0;ReadMethodType=U64Data Out 1NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 1;0;ReadMethodType=U64Data Out 2NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 2;0;ReadMethodType=U64Data Out 3NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 3;0;ReadMethodType=U64Data Out 64NumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Data Out 64;0;ReadMethodType=U64Host DMA 64"ControlLogic=0;NumberOfElements=2047;Type=2;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Host DMA 64;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"Host DMA Average Sector Intensity"ControlLogic=0;NumberOfElements=63;Type=2;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Host DMA Average Sector Intensity;DataType=1000800000000001000940050002553800000100000000000000;DisableOnOverflowUnderflow=FALSE"Output ValidNumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Output Valid;0;ReadMethodType=boolOutput ValidNumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Output Valid;0;ReadMethodType=boolPack 256 To 6444e223c72bbffc5b07658af642211b28e84e094a0fe058883c03d59b4df079ac&lt;Array&gt;
 &lt;Name&gt;Generics&lt;/Name&gt;
 &lt;Dimsize&gt;0&lt;/Dimsize&gt;
 &lt;Cluster&gt;
@@ -5843,7 +5853,7 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
 &lt;NumElts&gt;3&lt;/NumElts&gt;
 &lt;String&gt;
 &lt;Name&gt;Name&lt;/Name&gt;
-&lt;Val&gt;95MHz&lt;/Val&gt;
+&lt;Val&gt;90MHz&lt;/Val&gt;
 &lt;/String&gt;
 &lt;Boolean&gt;
 &lt;Name&gt;Use Top Clock&lt;/Name&gt;
@@ -5926,7 +5936,7 @@ Pack 80 To 25639aa02a4f26ef1543c22e7d5289213723d62b465b8add759df740219d94c3dae&l
 &lt;NumElts&gt;3&lt;/NumElts&gt;
 &lt;String&gt;
 &lt;Name&gt;Name&lt;/Name&gt;
-&lt;Val&gt;95MHz&lt;/Val&gt;
+&lt;Val&gt;90MHz&lt;/Val&gt;
 &lt;/String&gt;
 &lt;Boolean&gt;
 &lt;Name&gt;Use Top Clock&lt;/Name&gt;
@@ -6505,7 +6515,7 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
 			</Item>
 			<Item Name="10-Tap 8-bit Camera without DRAM (FPGA-SIM).vi" Type="VI" URL="../10-Tap 8-bit Camera without DRAM (FPGA-SIM).vi">
 				<Property Name="BuildSpec" Type="Str">{7A50CF3A-5969-4D18-88F5-90D34B2C2316}</Property>
-				<Property Name="configString.guid" Type="Str">{0BB1AFBD-AD9E-4BDA-B766-1D06DD800FFC}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 3;0;WriteMethodType=U64{17A82158-55CD-4486-8CFC-FE79263252D9}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Output Valid;0;ReadMethodType=bool{1C34F8C8-9453-4BB0-B765-3CDD36E2B87A}ResourceName=40 MHz Onboard Clock;TopSignalConnect=Clk40;ClockSignalName=Clk40;MinFreq=40000000.000000;MaxFreq=40000000.000000;VariableFreq=0;NomFreq=40000000.000000;PeakPeriodJitter=250.000000;MinDutyCycle=50.000000;MaxDutyCycle=50.000000;Accuracy=100.000000;RunTime=0;SpreadSpectrum=0;GenericDataHash=D41D8CD98F00B204E9800998ECF8427E{1C5B6C30-FFA5-458E-83C4-E9339FF0E99E}Multiplier=19.000000;Divisor=8.000000{2BFA17EE-A1A4-4092-B7E1-D245DCF62072}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Write Enable;0;WriteMethodType=bool{3B1860FA-3BF3-41C5-85AD-4C753D569DCB}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 0;0;WriteMethodType=U64{3D2B433D-BD36-4D9C-AEFF-FB99E0D8964A}"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000003000F40050008536563746F7220230000114005000B506978656C2056616C7565002040500002000000011453696E676C6520536563746F7220506978656C200000010002000000000000;DisableOnOverflowUnderflow=FALSE"{3D7BF3FA-C817-4768-8B1F-554A9C4832C7}44e223c72bbffc5b07658af642211b28e84e094a0fe058883c03d59b4df079ac&lt;Array&gt;
+				<Property Name="configString.guid" Type="Str">{0BB1AFBD-AD9E-4BDA-B766-1D06DD800FFC}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 3;0;WriteMethodType=U64{17A82158-55CD-4486-8CFC-FE79263252D9}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Output Valid;0;ReadMethodType=bool{1C34F8C8-9453-4BB0-B765-3CDD36E2B87A}ResourceName=40 MHz Onboard Clock;TopSignalConnect=Clk40;ClockSignalName=Clk40;MinFreq=40000000.000000;MaxFreq=40000000.000000;VariableFreq=0;NomFreq=40000000.000000;PeakPeriodJitter=250.000000;MinDutyCycle=50.000000;MaxDutyCycle=50.000000;Accuracy=100.000000;RunTime=0;SpreadSpectrum=0;GenericDataHash=D41D8CD98F00B204E9800998ECF8427E{1C5B6C30-FFA5-458E-83C4-E9339FF0E99E}Multiplier=9.000000;Divisor=4.000000{2BFA17EE-A1A4-4092-B7E1-D245DCF62072}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Write Enable;0;WriteMethodType=bool{3B1860FA-3BF3-41C5-85AD-4C753D569DCB}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 0;0;WriteMethodType=U64{3D2B433D-BD36-4D9C-AEFF-FB99E0D8964A}"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000003000F40050008536563746F7220230000114005000B506978656C2056616C7565002040500002000000011453696E676C6520536563746F7220506978656C200000010002000000000000;DisableOnOverflowUnderflow=FALSE"{3D7BF3FA-C817-4768-8B1F-554A9C4832C7}44e223c72bbffc5b07658af642211b28e84e094a0fe058883c03d59b4df079ac&lt;Array&gt;
 &lt;Name&gt;Generics&lt;/Name&gt;
 &lt;Dimsize&gt;0&lt;/Dimsize&gt;
 &lt;Cluster&gt;
@@ -6575,7 +6585,7 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
 &lt;NumElts&gt;3&lt;/NumElts&gt;
 &lt;String&gt;
 &lt;Name&gt;Name&lt;/Name&gt;
-&lt;Val&gt;95MHz&lt;/Val&gt;
+&lt;Val&gt;90MHz&lt;/Val&gt;
 &lt;/String&gt;
 &lt;Boolean&gt;
 &lt;Name&gt;Use Top Clock&lt;/Name&gt;
@@ -6658,7 +6668,7 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
 &lt;NumElts&gt;3&lt;/NumElts&gt;
 &lt;String&gt;
 &lt;Name&gt;Name&lt;/Name&gt;
-&lt;Val&gt;95MHz&lt;/Val&gt;
+&lt;Val&gt;90MHz&lt;/Val&gt;
 &lt;/String&gt;
 &lt;Boolean&gt;
 &lt;Name&gt;Use Top Clock&lt;/Name&gt;
@@ -6672,7 +6682,7 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
 &lt;/Cluster&gt;
 &lt;/Array&gt;
 {85B8F5A4-A89E-4C19-B912-99E910C411FB}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Output Valid;0;ReadMethodType=bool{88F3FACA-F411-456C-83DC-38A63CEE8F5B}"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094006000355313600010000000000000000;DisableOnOverflowUnderflow=FALSE"{8CC95475-554A-4B9B-8A28-A836F194941C}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 2;0;WriteMethodType=U64{8DF05848-C296-4185-9E79-7BAF0105BB33}"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000003000F40050008536563746F7220230000114005000B506978656C2056616C7565002040500002000000011453696E676C6520536563746F7220506978656C200000010002000000000000;DisableOnOverflowUnderflow=FALSE"{95C8CF3B-953B-4742-ABCD-8346C8DF32B1}"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"{965D85E8-7C43-4920-BAD6-1C9B08E251ED}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Ready for Write;0;ReadMethodType=bool{98AD70CD-D95B-4E00-B789-5531BA653AA1}"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"{9A4616C7-67DD-4E36-89DE-DF021EA7D810}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Data Out 64;0;ReadMethodType=U64{9C1E9CE4-B1AC-49DE-A905-84E4020158D4}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 0;0;ReadMethodType=U64{A27BAA25-049C-48F5-9D29-65EBB80A4011}Actual Number of Elements=32;ReadArbs=1;WriteArbs=1;Implementation=2;DataType=1000800000000003001B40070015416363756D756C6174656420496E74656E73697479000B40060005436F756E74002640500002000000011A416363756D756C6174656420536563746F7220436C7573746572000001000200000000000000000000;InitDataHash=;DRAM Selection=DramBank0;DRAM Max Outstanding Requests=32;DRAM Include Byte Enables=FALSE;DRAM Grant Time=50;Interface Configuration=Read A-Write B;Multiple Clock Domains=FALSE{BC698242-FD79-4244-B897-27454684E7D3}"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000001000940050002553800000100000000000000;DisableOnOverflowUnderflow=FALSE"{BCACC1F6-8E48-4C6D-A094-8FCCE02FC366}"ControlLogic=0;NumberOfElements=517;Type=1;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Target Sim Image 64;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"{C46D9730-AF25-4C8C-BB74-65DB7E032036}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Data In Upper 16;0;WriteMethodType=U16{CC4ACDEB-8A07-450F-8E30-E9B235EEFDF3}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Write Enable;0;WriteMethodType=bool{DC839FDA-1C4E-4D8D-BD99-CC17692C6975}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Read Enable;0;WriteMethodType=bool{ECF75280-348B-4B37-A696-C1B287B6D2E5}"ControlLogic=0;NumberOfElements=517;Type=1;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Target Sim Image 16;DataType=100080000000000100094006000355313600010000000000000000;DisableOnOverflowUnderflow=FALSE"{F5D0F497-ACDF-487C-A19D-CC81C25DDAEE}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Ready For Write;0;ReadMethodType=bool{FB8DCA12-2094-48D6-BADE-068AA8C105D0}"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000003000F40050008536563746F7220230000114005000B506978656C2056616C7565002040500002000000011453696E676C6520536563746F7220506978656C200000010002000000000000;DisableOnOverflowUnderflow=FALSE"PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7842RFPGA_TARGET_FAMILYVIRTEX5TARGET_TYPEFPGA/[rSeriesConfig.Begin][rSeriesConfig.End]</Property>
-				<Property Name="configString.name" Type="Str">40 MHz Onboard ClockResourceName=40 MHz Onboard Clock;TopSignalConnect=Clk40;ClockSignalName=Clk40;MinFreq=40000000.000000;MaxFreq=40000000.000000;VariableFreq=0;NomFreq=40000000.000000;PeakPeriodJitter=250.000000;MinDutyCycle=50.000000;MaxDutyCycle=50.000000;Accuracy=100.000000;RunTime=0;SpreadSpectrum=0;GenericDataHash=D41D8CD98F00B204E9800998ECF8427E95MHzMultiplier=19.000000;Divisor=8.000000Accumulated Sector IntensityActual Number of Elements=32;ReadArbs=1;WriteArbs=1;Implementation=2;DataType=1000800000000003001B40070015416363756D756C6174656420496E74656E73697479000B40060005436F756E74002640500002000000011A416363756D756C6174656420536563746F7220436C7573746572000001000200000000000000000000;InitDataHash=;DRAM Selection=DramBank0;DRAM Max Outstanding Requests=32;DRAM Include Byte Enables=FALSE;DRAM Grant Time=50;Interface Configuration=Read A-Write B;Multiple Clock Domains=FALSEAverage Sector FIFO"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000001000940050002553800000100000000000000;DisableOnOverflowUnderflow=FALSE"Cam Data 16"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094006000355313600010000000000000000;DisableOnOverflowUnderflow=FALSE"Cam Data 64"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"Data In 0ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 0;0;WriteMethodType=U64Data In 1ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 1;0;WriteMethodType=U64Data In 2ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 2;0;WriteMethodType=U64Data In 3ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 3;0;WriteMethodType=U64Data In Lower 64ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Data In Lower 64;0;WriteMethodType=U64Data In Upper 16ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Data In Upper 16;0;WriteMethodType=U16Data Out 0NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 0;0;ReadMethodType=U64Data Out 1NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 1;0;ReadMethodType=U64Data Out 2NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 2;0;ReadMethodType=U64Data Out 3NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 3;0;ReadMethodType=U64Data Out 64NumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Data Out 64;0;ReadMethodType=U64Host DMA 64"ControlLogic=0;NumberOfElements=2047;Type=2;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Host DMA 64;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"Host DMA Average Sector Intensity"ControlLogic=0;NumberOfElements=63;Type=2;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Host DMA Average Sector Intensity;DataType=1000800000000001000940050002553800000100000000000000;DisableOnOverflowUnderflow=FALSE"Output ValidNumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Output Valid;0;ReadMethodType=boolOutput ValidNumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Output Valid;0;ReadMethodType=boolPack 256 To 6444e223c72bbffc5b07658af642211b28e84e094a0fe058883c03d59b4df079ac&lt;Array&gt;
+				<Property Name="configString.name" Type="Str">40 MHz Onboard ClockResourceName=40 MHz Onboard Clock;TopSignalConnect=Clk40;ClockSignalName=Clk40;MinFreq=40000000.000000;MaxFreq=40000000.000000;VariableFreq=0;NomFreq=40000000.000000;PeakPeriodJitter=250.000000;MinDutyCycle=50.000000;MaxDutyCycle=50.000000;Accuracy=100.000000;RunTime=0;SpreadSpectrum=0;GenericDataHash=D41D8CD98F00B204E9800998ECF8427E90MHzMultiplier=9.000000;Divisor=4.000000Accumulated Sector IntensityActual Number of Elements=32;ReadArbs=1;WriteArbs=1;Implementation=2;DataType=1000800000000003001B40070015416363756D756C6174656420496E74656E73697479000B40060005436F756E74002640500002000000011A416363756D756C6174656420536563746F7220436C7573746572000001000200000000000000000000;InitDataHash=;DRAM Selection=DramBank0;DRAM Max Outstanding Requests=32;DRAM Include Byte Enables=FALSE;DRAM Grant Time=50;Interface Configuration=Read A-Write B;Multiple Clock Domains=FALSEAverage Sector FIFO"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000001000940050002553800000100000000000000;DisableOnOverflowUnderflow=FALSE"Cam Data 16"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094006000355313600010000000000000000;DisableOnOverflowUnderflow=FALSE"Cam Data 64"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"Data In 0ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 0;0;WriteMethodType=U64Data In 1ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 1;0;WriteMethodType=U64Data In 2ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 2;0;WriteMethodType=U64Data In 3ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 3;0;WriteMethodType=U64Data In Lower 64ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Data In Lower 64;0;WriteMethodType=U64Data In Upper 16ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Data In Upper 16;0;WriteMethodType=U16Data Out 0NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 0;0;ReadMethodType=U64Data Out 1NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 1;0;ReadMethodType=U64Data Out 2NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 2;0;ReadMethodType=U64Data Out 3NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 3;0;ReadMethodType=U64Data Out 64NumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Data Out 64;0;ReadMethodType=U64Host DMA 64"ControlLogic=0;NumberOfElements=2047;Type=2;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Host DMA 64;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"Host DMA Average Sector Intensity"ControlLogic=0;NumberOfElements=63;Type=2;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Host DMA Average Sector Intensity;DataType=1000800000000001000940050002553800000100000000000000;DisableOnOverflowUnderflow=FALSE"Output ValidNumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Output Valid;0;ReadMethodType=boolOutput ValidNumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Output Valid;0;ReadMethodType=boolPack 256 To 6444e223c72bbffc5b07658af642211b28e84e094a0fe058883c03d59b4df079ac&lt;Array&gt;
 &lt;Name&gt;Generics&lt;/Name&gt;
 &lt;Dimsize&gt;0&lt;/Dimsize&gt;
 &lt;Cluster&gt;
@@ -6742,7 +6752,7 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
 &lt;NumElts&gt;3&lt;/NumElts&gt;
 &lt;String&gt;
 &lt;Name&gt;Name&lt;/Name&gt;
-&lt;Val&gt;95MHz&lt;/Val&gt;
+&lt;Val&gt;90MHz&lt;/Val&gt;
 &lt;/String&gt;
 &lt;Boolean&gt;
 &lt;Name&gt;Use Top Clock&lt;/Name&gt;
@@ -6825,7 +6835,7 @@ Pack 80 To 25639aa02a4f26ef1543c22e7d5289213723d62b465b8add759df740219d94c3dae&l
 &lt;NumElts&gt;3&lt;/NumElts&gt;
 &lt;String&gt;
 &lt;Name&gt;Name&lt;/Name&gt;
-&lt;Val&gt;95MHz&lt;/Val&gt;
+&lt;Val&gt;90MHz&lt;/Val&gt;
 &lt;/String&gt;
 &lt;Boolean&gt;
 &lt;Name&gt;Use Top Clock&lt;/Name&gt;
@@ -6858,12 +6868,12 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
 				<Property Name="NI.LV.FPGA.BaseTSConfig.VariableFrequency" Type="Bool">false</Property>
 				<Property Name="NI.LV.FPGA.Valid" Type="Bool">true</Property>
 				<Property Name="NI.LV.FPGA.Version" Type="Int">5</Property>
-				<Item Name="95MHz" Type="FPGA Derived Clock">
+				<Item Name="90MHz" Type="FPGA Derived Clock">
 					<Property Name="FPGA.PersistentID" Type="Str">{1C5B6C30-FFA5-458E-83C4-E9339FF0E99E}</Property>
-					<Property Name="NI.LV.FPGA.DerivedConfig" Type="Str">Multiplier=19.000000;Divisor=8.000000</Property>
-					<Property Name="NI.LV.FPGA.DerivedConfig.Divisor" Type="Dbl">8</Property>
+					<Property Name="NI.LV.FPGA.DerivedConfig" Type="Str">Multiplier=9.000000;Divisor=4.000000</Property>
+					<Property Name="NI.LV.FPGA.DerivedConfig.Divisor" Type="Dbl">4</Property>
 					<Property Name="NI.LV.FPGA.DerivedConfig.FromExternalClock" Type="Bool">false</Property>
-					<Property Name="NI.LV.FPGA.DerivedConfig.Multiplier" Type="Dbl">19</Property>
+					<Property Name="NI.LV.FPGA.DerivedConfig.Multiplier" Type="Dbl">9</Property>
 					<Property Name="NI.LV.FPGA.DerivedConfig.ParentFrequencyInHertz" Type="Dbl">40000000</Property>
 					<Property Name="NI.LV.FPGA.Valid" Type="Bool">true</Property>
 					<Property Name="NI.LV.FPGA.Version" Type="Int">5</Property>
@@ -6892,6 +6902,342 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
 				<Property Name="NI.LV.FPGA.Version" Type="Int">9</Property>
 				<Property Name="Type Descriptor" Type="Str">1000800000000003001B40070015416363756D756C6174656420496E74656E73697479000B40060005436F756E74002640500002000000011A416363756D756C6174656420536563746F7220436C7573746572000001000200000000000000000000</Property>
 			</Item>
+			<Item Name="Check If Pixels Belong In Sector (Host).vi" Type="VI" URL="../Host/Sectors/Check If Pixels Belong In Sector (Host).vi">
+				<Property Name="configString.guid" Type="Str">{0BB1AFBD-AD9E-4BDA-B766-1D06DD800FFC}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 3;0;WriteMethodType=U64{17A82158-55CD-4486-8CFC-FE79263252D9}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Output Valid;0;ReadMethodType=bool{1C34F8C8-9453-4BB0-B765-3CDD36E2B87A}ResourceName=40 MHz Onboard Clock;TopSignalConnect=Clk40;ClockSignalName=Clk40;MinFreq=40000000.000000;MaxFreq=40000000.000000;VariableFreq=0;NomFreq=40000000.000000;PeakPeriodJitter=250.000000;MinDutyCycle=50.000000;MaxDutyCycle=50.000000;Accuracy=100.000000;RunTime=0;SpreadSpectrum=0;GenericDataHash=D41D8CD98F00B204E9800998ECF8427E{1C5B6C30-FFA5-458E-83C4-E9339FF0E99E}Multiplier=9.000000;Divisor=4.000000{2BFA17EE-A1A4-4092-B7E1-D245DCF62072}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Write Enable;0;WriteMethodType=bool{3B1860FA-3BF3-41C5-85AD-4C753D569DCB}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 0;0;WriteMethodType=U64{3D2B433D-BD36-4D9C-AEFF-FB99E0D8964A}"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000003000F40050008536563746F7220230000114005000B506978656C2056616C7565002040500002000000011453696E676C6520536563746F7220506978656C200000010002000000000000;DisableOnOverflowUnderflow=FALSE"{3D7BF3FA-C817-4768-8B1F-554A9C4832C7}44e223c72bbffc5b07658af642211b28e84e094a0fe058883c03d59b4df079ac&lt;Array&gt;
+&lt;Name&gt;Generics&lt;/Name&gt;
+&lt;Dimsize&gt;0&lt;/Dimsize&gt;
+&lt;Cluster&gt;
+&lt;Name&gt;CLIP Generic&lt;/Name&gt;
+&lt;NumElts&gt;5&lt;/NumElts&gt;
+&lt;String&gt;
+&lt;Name&gt;Name&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;Type&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;Default value&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;Value&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;Description&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;/Cluster&gt;
+&lt;/Array&gt;
+&lt;Array&gt;
+&lt;Name&gt;Clock Connections&lt;/Name&gt;
+&lt;Dimsize&gt;1&lt;/Dimsize&gt;
+&lt;Cluster&gt;
+&lt;Name&gt;CLIP Clock Connection&lt;/Name&gt;
+&lt;NumElts&gt;2&lt;/NumElts&gt;
+&lt;Cluster&gt;
+&lt;Name&gt;CLIP Clock&lt;/Name&gt;
+&lt;NumElts&gt;6&lt;/NumElts&gt;
+&lt;String&gt;
+&lt;Name&gt;LabVIEW name&lt;/Name&gt;
+&lt;Val&gt;Clock&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;VHDL name&lt;/Name&gt;
+&lt;Val&gt;Clk&lt;/Val&gt;
+&lt;/String&gt;
+&lt;DBL&gt;
+&lt;Name&gt;Max Freq&lt;/Name&gt;
+&lt;Val&gt;200000000.00000000000000&lt;/Val&gt;
+&lt;/DBL&gt;
+&lt;DBL&gt;
+&lt;Name&gt;Min Freq&lt;/Name&gt;
+&lt;Val&gt;1000000.00000000000000&lt;/Val&gt;
+&lt;/DBL&gt;
+&lt;EW&gt;
+&lt;Name&gt;Direction&lt;/Name&gt;
+&lt;Choice&gt;ToCLIP&lt;/Choice&gt;
+&lt;Choice&gt;FromCLIP&lt;/Choice&gt;
+&lt;Choice&gt;Bidirectional&lt;/Choice&gt;
+&lt;Val&gt;0&lt;/Val&gt;
+&lt;/EW&gt;
+&lt;String&gt;
+&lt;Name&gt;ClockToLinkTo&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;/Cluster&gt;
+&lt;Cluster&gt;
+&lt;Name&gt;FPGA Clock&lt;/Name&gt;
+&lt;NumElts&gt;3&lt;/NumElts&gt;
+&lt;String&gt;
+&lt;Name&gt;Name&lt;/Name&gt;
+&lt;Val&gt;90MHz&lt;/Val&gt;
+&lt;/String&gt;
+&lt;Boolean&gt;
+&lt;Name&gt;Use Top Clock&lt;/Name&gt;
+&lt;Val&gt;0&lt;/Val&gt;
+&lt;/Boolean&gt;
+&lt;Boolean&gt;
+&lt;Name&gt;Clock From CLIP&lt;/Name&gt;
+&lt;Val&gt;0&lt;/Val&gt;
+&lt;/Boolean&gt;
+&lt;/Cluster&gt;
+&lt;/Cluster&gt;
+&lt;/Array&gt;
+{3E9E7A2E-A525-44C0-8325-6424F199BB1A}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 1;0;WriteMethodType=U64{4A3482EF-2B8F-41C0-831A-A81D0575429F}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 3;0;ReadMethodType=U64{50F28D05-65AF-47B4-94D5-AF1B72C7EFD2}"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000003000F40050008536563746F7220230000114005000B506978656C2056616C7565002040500002000000011453696E676C6520536563746F7220506978656C200000010002000000000000;DisableOnOverflowUnderflow=FALSE"{51BA659C-BBC6-4336-8612-50A874969EA1}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 1;0;ReadMethodType=U64{632980C0-AE15-4428-9C0B-FBF4A589CF70}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Data In Lower 64;0;WriteMethodType=U64{64F8699A-32B2-4792-A655-0A37C866AF8F}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 2;0;ReadMethodType=U64{685983E8-68AD-4083-ABB1-CF504EFAF5BF}"ControlLogic=0;NumberOfElements=63;Type=2;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Host DMA Average Sector Intensity;DataType=1000800000000001000940050002553800000100000000000000;DisableOnOverflowUnderflow=FALSE"{7043924A-B700-4230-BCA2-39EED66ED1E5}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Read Enable;0;WriteMethodType=bool{70A4A407-EB5F-49A7-B701-55BF2A65584D}"ControlLogic=0;NumberOfElements=2047;Type=2;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Host DMA 64;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"{7F1B6A2C-E131-4D54-90A4-36C32A95B00E}39aa02a4f26ef1543c22e7d5289213723d62b465b8add759df740219d94c3dae&lt;Array&gt;
+&lt;Name&gt;Generics&lt;/Name&gt;
+&lt;Dimsize&gt;0&lt;/Dimsize&gt;
+&lt;Cluster&gt;
+&lt;Name&gt;CLIP Generic&lt;/Name&gt;
+&lt;NumElts&gt;5&lt;/NumElts&gt;
+&lt;String&gt;
+&lt;Name&gt;Name&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;Type&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;Default value&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;Value&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;Description&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;/Cluster&gt;
+&lt;/Array&gt;
+&lt;Array&gt;
+&lt;Name&gt;Clock Connections&lt;/Name&gt;
+&lt;Dimsize&gt;1&lt;/Dimsize&gt;
+&lt;Cluster&gt;
+&lt;Name&gt;CLIP Clock Connection&lt;/Name&gt;
+&lt;NumElts&gt;2&lt;/NumElts&gt;
+&lt;Cluster&gt;
+&lt;Name&gt;CLIP Clock&lt;/Name&gt;
+&lt;NumElts&gt;6&lt;/NumElts&gt;
+&lt;String&gt;
+&lt;Name&gt;LabVIEW name&lt;/Name&gt;
+&lt;Val&gt;Clock&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;VHDL name&lt;/Name&gt;
+&lt;Val&gt;Clk&lt;/Val&gt;
+&lt;/String&gt;
+&lt;DBL&gt;
+&lt;Name&gt;Max Freq&lt;/Name&gt;
+&lt;Val&gt;200000000.00000000000000&lt;/Val&gt;
+&lt;/DBL&gt;
+&lt;DBL&gt;
+&lt;Name&gt;Min Freq&lt;/Name&gt;
+&lt;Val&gt;1000000.00000000000000&lt;/Val&gt;
+&lt;/DBL&gt;
+&lt;EW&gt;
+&lt;Name&gt;Direction&lt;/Name&gt;
+&lt;Choice&gt;ToCLIP&lt;/Choice&gt;
+&lt;Choice&gt;FromCLIP&lt;/Choice&gt;
+&lt;Choice&gt;Bidirectional&lt;/Choice&gt;
+&lt;Val&gt;0&lt;/Val&gt;
+&lt;/EW&gt;
+&lt;String&gt;
+&lt;Name&gt;ClockToLinkTo&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;/Cluster&gt;
+&lt;Cluster&gt;
+&lt;Name&gt;FPGA Clock&lt;/Name&gt;
+&lt;NumElts&gt;3&lt;/NumElts&gt;
+&lt;String&gt;
+&lt;Name&gt;Name&lt;/Name&gt;
+&lt;Val&gt;90MHz&lt;/Val&gt;
+&lt;/String&gt;
+&lt;Boolean&gt;
+&lt;Name&gt;Use Top Clock&lt;/Name&gt;
+&lt;Val&gt;0&lt;/Val&gt;
+&lt;/Boolean&gt;
+&lt;Boolean&gt;
+&lt;Name&gt;Clock From CLIP&lt;/Name&gt;
+&lt;Val&gt;0&lt;/Val&gt;
+&lt;/Boolean&gt;
+&lt;/Cluster&gt;
+&lt;/Cluster&gt;
+&lt;/Array&gt;
+{85B8F5A4-A89E-4C19-B912-99E910C411FB}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Output Valid;0;ReadMethodType=bool{88F3FACA-F411-456C-83DC-38A63CEE8F5B}"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094006000355313600010000000000000000;DisableOnOverflowUnderflow=FALSE"{8CC95475-554A-4B9B-8A28-A836F194941C}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 2;0;WriteMethodType=U64{8DF05848-C296-4185-9E79-7BAF0105BB33}"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000003000F40050008536563746F7220230000114005000B506978656C2056616C7565002040500002000000011453696E676C6520536563746F7220506978656C200000010002000000000000;DisableOnOverflowUnderflow=FALSE"{95C8CF3B-953B-4742-ABCD-8346C8DF32B1}"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"{965D85E8-7C43-4920-BAD6-1C9B08E251ED}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Ready for Write;0;ReadMethodType=bool{98AD70CD-D95B-4E00-B789-5531BA653AA1}"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"{9A4616C7-67DD-4E36-89DE-DF021EA7D810}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Data Out 64;0;ReadMethodType=U64{9C1E9CE4-B1AC-49DE-A905-84E4020158D4}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 0;0;ReadMethodType=U64{A27BAA25-049C-48F5-9D29-65EBB80A4011}Actual Number of Elements=32;ReadArbs=1;WriteArbs=1;Implementation=2;DataType=1000800000000003001B40070015416363756D756C6174656420496E74656E73697479000B40060005436F756E74002640500002000000011A416363756D756C6174656420536563746F7220436C7573746572000001000200000000000000000000;InitDataHash=;DRAM Selection=DramBank0;DRAM Max Outstanding Requests=32;DRAM Include Byte Enables=FALSE;DRAM Grant Time=50;Interface Configuration=Read A-Write B;Multiple Clock Domains=FALSE{BC698242-FD79-4244-B897-27454684E7D3}"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000001000940050002553800000100000000000000;DisableOnOverflowUnderflow=FALSE"{BCACC1F6-8E48-4C6D-A094-8FCCE02FC366}"ControlLogic=0;NumberOfElements=517;Type=1;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Target Sim Image 64;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"{C46D9730-AF25-4C8C-BB74-65DB7E032036}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Data In Upper 16;0;WriteMethodType=U16{CC4ACDEB-8A07-450F-8E30-E9B235EEFDF3}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Write Enable;0;WriteMethodType=bool{DC839FDA-1C4E-4D8D-BD99-CC17692C6975}ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Read Enable;0;WriteMethodType=bool{ECF75280-348B-4B37-A696-C1B287B6D2E5}"ControlLogic=0;NumberOfElements=517;Type=1;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Target Sim Image 16;DataType=100080000000000100094006000355313600010000000000000000;DisableOnOverflowUnderflow=FALSE"{F5D0F497-ACDF-487C-A19D-CC81C25DDAEE}NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Ready For Write;0;ReadMethodType=bool{FB8DCA12-2094-48D6-BADE-068AA8C105D0}"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000003000F40050008536563746F7220230000114005000B506978656C2056616C7565002040500002000000011453696E676C6520536563746F7220506978656C200000010002000000000000;DisableOnOverflowUnderflow=FALSE"PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7842RFPGA_TARGET_FAMILYVIRTEX5TARGET_TYPEFPGA/[rSeriesConfig.Begin][rSeriesConfig.End]</Property>
+				<Property Name="configString.name" Type="Str">40 MHz Onboard ClockResourceName=40 MHz Onboard Clock;TopSignalConnect=Clk40;ClockSignalName=Clk40;MinFreq=40000000.000000;MaxFreq=40000000.000000;VariableFreq=0;NomFreq=40000000.000000;PeakPeriodJitter=250.000000;MinDutyCycle=50.000000;MaxDutyCycle=50.000000;Accuracy=100.000000;RunTime=0;SpreadSpectrum=0;GenericDataHash=D41D8CD98F00B204E9800998ECF8427E90MHzMultiplier=9.000000;Divisor=4.000000Accumulated Sector IntensityActual Number of Elements=32;ReadArbs=1;WriteArbs=1;Implementation=2;DataType=1000800000000003001B40070015416363756D756C6174656420496E74656E73697479000B40060005436F756E74002640500002000000011A416363756D756C6174656420536563746F7220436C7573746572000001000200000000000000000000;InitDataHash=;DRAM Selection=DramBank0;DRAM Max Outstanding Requests=32;DRAM Include Byte Enables=FALSE;DRAM Grant Time=50;Interface Configuration=Read A-Write B;Multiple Clock Domains=FALSEAverage Sector FIFO"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000001000940050002553800000100000000000000;DisableOnOverflowUnderflow=FALSE"Cam Data 16"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094006000355313600010000000000000000;DisableOnOverflowUnderflow=FALSE"Cam Data 64"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"Data In 0ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 0;0;WriteMethodType=U64Data In 1ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 1;0;WriteMethodType=U64Data In 2ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 2;0;WriteMethodType=U64Data In 3ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Data In 3;0;WriteMethodType=U64Data In Lower 64ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Data In Lower 64;0;WriteMethodType=U64Data In Upper 16ArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Data In Upper 16;0;WriteMethodType=U16Data Out 0NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 0;0;ReadMethodType=U64Data Out 1NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 1;0;ReadMethodType=U64Data Out 2NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 2;0;ReadMethodType=U64Data Out 3NumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Data Out 3;0;ReadMethodType=U64Data Out 64NumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Data Out 64;0;ReadMethodType=U64Host DMA 64"ControlLogic=0;NumberOfElements=2047;Type=2;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Host DMA 64;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"Host DMA Average Sector Intensity"ControlLogic=0;NumberOfElements=63;Type=2;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Host DMA Average Sector Intensity;DataType=1000800000000001000940050002553800000100000000000000;DisableOnOverflowUnderflow=FALSE"Output ValidNumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Output Valid;0;ReadMethodType=boolOutput ValidNumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Output Valid;0;ReadMethodType=boolPack 256 To 6444e223c72bbffc5b07658af642211b28e84e094a0fe058883c03d59b4df079ac&lt;Array&gt;
+&lt;Name&gt;Generics&lt;/Name&gt;
+&lt;Dimsize&gt;0&lt;/Dimsize&gt;
+&lt;Cluster&gt;
+&lt;Name&gt;CLIP Generic&lt;/Name&gt;
+&lt;NumElts&gt;5&lt;/NumElts&gt;
+&lt;String&gt;
+&lt;Name&gt;Name&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;Type&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;Default value&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;Value&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;Description&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;/Cluster&gt;
+&lt;/Array&gt;
+&lt;Array&gt;
+&lt;Name&gt;Clock Connections&lt;/Name&gt;
+&lt;Dimsize&gt;1&lt;/Dimsize&gt;
+&lt;Cluster&gt;
+&lt;Name&gt;CLIP Clock Connection&lt;/Name&gt;
+&lt;NumElts&gt;2&lt;/NumElts&gt;
+&lt;Cluster&gt;
+&lt;Name&gt;CLIP Clock&lt;/Name&gt;
+&lt;NumElts&gt;6&lt;/NumElts&gt;
+&lt;String&gt;
+&lt;Name&gt;LabVIEW name&lt;/Name&gt;
+&lt;Val&gt;Clock&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;VHDL name&lt;/Name&gt;
+&lt;Val&gt;Clk&lt;/Val&gt;
+&lt;/String&gt;
+&lt;DBL&gt;
+&lt;Name&gt;Max Freq&lt;/Name&gt;
+&lt;Val&gt;200000000.00000000000000&lt;/Val&gt;
+&lt;/DBL&gt;
+&lt;DBL&gt;
+&lt;Name&gt;Min Freq&lt;/Name&gt;
+&lt;Val&gt;1000000.00000000000000&lt;/Val&gt;
+&lt;/DBL&gt;
+&lt;EW&gt;
+&lt;Name&gt;Direction&lt;/Name&gt;
+&lt;Choice&gt;ToCLIP&lt;/Choice&gt;
+&lt;Choice&gt;FromCLIP&lt;/Choice&gt;
+&lt;Choice&gt;Bidirectional&lt;/Choice&gt;
+&lt;Val&gt;0&lt;/Val&gt;
+&lt;/EW&gt;
+&lt;String&gt;
+&lt;Name&gt;ClockToLinkTo&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;/Cluster&gt;
+&lt;Cluster&gt;
+&lt;Name&gt;FPGA Clock&lt;/Name&gt;
+&lt;NumElts&gt;3&lt;/NumElts&gt;
+&lt;String&gt;
+&lt;Name&gt;Name&lt;/Name&gt;
+&lt;Val&gt;90MHz&lt;/Val&gt;
+&lt;/String&gt;
+&lt;Boolean&gt;
+&lt;Name&gt;Use Top Clock&lt;/Name&gt;
+&lt;Val&gt;0&lt;/Val&gt;
+&lt;/Boolean&gt;
+&lt;Boolean&gt;
+&lt;Name&gt;Clock From CLIP&lt;/Name&gt;
+&lt;Val&gt;0&lt;/Val&gt;
+&lt;/Boolean&gt;
+&lt;/Cluster&gt;
+&lt;/Cluster&gt;
+&lt;/Array&gt;
+Pack 80 To 25639aa02a4f26ef1543c22e7d5289213723d62b465b8add759df740219d94c3dae&lt;Array&gt;
+&lt;Name&gt;Generics&lt;/Name&gt;
+&lt;Dimsize&gt;0&lt;/Dimsize&gt;
+&lt;Cluster&gt;
+&lt;Name&gt;CLIP Generic&lt;/Name&gt;
+&lt;NumElts&gt;5&lt;/NumElts&gt;
+&lt;String&gt;
+&lt;Name&gt;Name&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;Type&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;Default value&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;Value&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;Description&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;/Cluster&gt;
+&lt;/Array&gt;
+&lt;Array&gt;
+&lt;Name&gt;Clock Connections&lt;/Name&gt;
+&lt;Dimsize&gt;1&lt;/Dimsize&gt;
+&lt;Cluster&gt;
+&lt;Name&gt;CLIP Clock Connection&lt;/Name&gt;
+&lt;NumElts&gt;2&lt;/NumElts&gt;
+&lt;Cluster&gt;
+&lt;Name&gt;CLIP Clock&lt;/Name&gt;
+&lt;NumElts&gt;6&lt;/NumElts&gt;
+&lt;String&gt;
+&lt;Name&gt;LabVIEW name&lt;/Name&gt;
+&lt;Val&gt;Clock&lt;/Val&gt;
+&lt;/String&gt;
+&lt;String&gt;
+&lt;Name&gt;VHDL name&lt;/Name&gt;
+&lt;Val&gt;Clk&lt;/Val&gt;
+&lt;/String&gt;
+&lt;DBL&gt;
+&lt;Name&gt;Max Freq&lt;/Name&gt;
+&lt;Val&gt;200000000.00000000000000&lt;/Val&gt;
+&lt;/DBL&gt;
+&lt;DBL&gt;
+&lt;Name&gt;Min Freq&lt;/Name&gt;
+&lt;Val&gt;1000000.00000000000000&lt;/Val&gt;
+&lt;/DBL&gt;
+&lt;EW&gt;
+&lt;Name&gt;Direction&lt;/Name&gt;
+&lt;Choice&gt;ToCLIP&lt;/Choice&gt;
+&lt;Choice&gt;FromCLIP&lt;/Choice&gt;
+&lt;Choice&gt;Bidirectional&lt;/Choice&gt;
+&lt;Val&gt;0&lt;/Val&gt;
+&lt;/EW&gt;
+&lt;String&gt;
+&lt;Name&gt;ClockToLinkTo&lt;/Name&gt;
+&lt;Val&gt;&lt;/Val&gt;
+&lt;/String&gt;
+&lt;/Cluster&gt;
+&lt;Cluster&gt;
+&lt;Name&gt;FPGA Clock&lt;/Name&gt;
+&lt;NumElts&gt;3&lt;/NumElts&gt;
+&lt;String&gt;
+&lt;Name&gt;Name&lt;/Name&gt;
+&lt;Val&gt;90MHz&lt;/Val&gt;
+&lt;/String&gt;
+&lt;Boolean&gt;
+&lt;Name&gt;Use Top Clock&lt;/Name&gt;
+&lt;Val&gt;0&lt;/Val&gt;
+&lt;/Boolean&gt;
+&lt;Boolean&gt;
+&lt;Name&gt;Clock From CLIP&lt;/Name&gt;
+&lt;Val&gt;0&lt;/Val&gt;
+&lt;/Boolean&gt;
+&lt;/Cluster&gt;
+&lt;/Cluster&gt;
+&lt;/Array&gt;
+PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7842RFPGA_TARGET_FAMILYVIRTEX5TARGET_TYPEFPGA/[rSeriesConfig.Begin][rSeriesConfig.End]Read EnableArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Read Enable;0;WriteMethodType=boolRead EnableArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Read Enable;0;WriteMethodType=boolReady for WriteNumberOfSyncRegistersForReadInProject=0;resource=/Pack 256 To 64/SignalList/Ready for Write;0;ReadMethodType=boolReady For WriteNumberOfSyncRegistersForReadInProject=0;resource=/Pack 80 To 256/SignalList/Ready For Write;0;ReadMethodType=boolSector Grouping FIFO"ControlLogic=1;NumberOfElements=514;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"Sector Pixel 1 FIFO"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000003000F40050008536563746F7220230000114005000B506978656C2056616C7565002040500002000000011453696E676C6520536563746F7220506978656C200000010002000000000000;DisableOnOverflowUnderflow=FALSE"Sector Pixel 2 FIFO"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000003000F40050008536563746F7220230000114005000B506978656C2056616C7565002040500002000000011453696E676C6520536563746F7220506978656C200000010002000000000000;DisableOnOverflowUnderflow=FALSE"Sector Pixel 3 FIFO"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000003000F40050008536563746F7220230000114005000B506978656C2056616C7565002040500002000000011453696E676C6520536563746F7220506978656C200000010002000000000000;DisableOnOverflowUnderflow=FALSE"Sector Pixel 4 FIFO"ControlLogic=0;NumberOfElements=37;Type=0;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;;DataType=1000800000000003000F40050008536563746F7220230000114005000B506978656C2056616C7565002040500002000000011453696E676C6520536563746F7220506978656C200000010002000000000000;DisableOnOverflowUnderflow=FALSE"Target Sim Image 16"ControlLogic=0;NumberOfElements=517;Type=1;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Target Sim Image 16;DataType=100080000000000100094006000355313600010000000000000000;DisableOnOverflowUnderflow=FALSE"Target Sim Image 64"ControlLogic=0;NumberOfElements=517;Type=1;ReadArbs=Arbitrate if Multiple Requestors Only;ElementsPerRead=1;WriteArbs=Arbitrate if Multiple Requestors Only;ElementsPerWrite=1;Implementation=2;Target Sim Image 64;DataType=100080000000000100094008000355363400010000000000000000000000000000;DisableOnOverflowUnderflow=FALSE"Write EnableArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 256 To 64/SignalList/Write Enable;0;WriteMethodType=boolWrite EnableArbitrationForOutputData=AlwaysArbitrate;NumberOfSyncRegistersForOutputData=0;resource=/Pack 80 To 256/SignalList/Write Enable;0;WriteMethodType=bool</Property>
+			</Item>
 			<Item Name="Pack 80 To 256" Type="FPGA Component Level IP">
 				<Property Name="FPGA.PersistentID" Type="Str">{7F1B6A2C-E131-4D54-90A4-36C32A95B00E}</Property>
 				<Property Name="NI.LV.CLIP.ClockConnections" Type="Xml">
@@ -6900,7 +7246,7 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
       <ClockFromCLIP>false</ClockFromCLIP>
       <Direction>ToCLIP</Direction>
       <HDLName>Clk</HDLName>
-      <LinkToFPGAClock>95MHz</LinkToFPGAClock>
+      <LinkToFPGAClock>90MHz</LinkToFPGAClock>
       <MaxFreq>200000000.0000</MaxFreq>
       <MinFreq>1000000.000000</MinFreq>
       <UseTopClock>false</UseTopClock>
@@ -6982,7 +7328,7 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
 &lt;NumElts&gt;3&lt;/NumElts&gt;
 &lt;String&gt;
 &lt;Name&gt;Name&lt;/Name&gt;
-&lt;Val&gt;95MHz&lt;/Val&gt;
+&lt;Val&gt;90MHz&lt;/Val&gt;
 &lt;/String&gt;
 &lt;Boolean&gt;
 &lt;Name&gt;Use Top Clock&lt;/Name&gt;
@@ -7149,7 +7495,7 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
       <ClockFromCLIP>false</ClockFromCLIP>
       <Direction>ToCLIP</Direction>
       <HDLName>Clk</HDLName>
-      <LinkToFPGAClock>95MHz</LinkToFPGAClock>
+      <LinkToFPGAClock>90MHz</LinkToFPGAClock>
       <MaxFreq>200000000.0000</MaxFreq>
       <MinFreq>1000000.000000</MinFreq>
       <UseTopClock>false</UseTopClock>
@@ -7231,7 +7577,7 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
 &lt;NumElts&gt;3&lt;/NumElts&gt;
 &lt;String&gt;
 &lt;Name&gt;Name&lt;/Name&gt;
-&lt;Val&gt;95MHz&lt;/Val&gt;
+&lt;Val&gt;90MHz&lt;/Val&gt;
 &lt;/String&gt;
 &lt;Boolean&gt;
 &lt;Name&gt;Use Top Clock&lt;/Name&gt;
@@ -7423,10 +7769,12 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
 					<Item Name="lvSimController.dll" Type="Document" URL="/&lt;vilib&gt;/rvi/Simulation/lvSimController.dll"/>
 					<Item Name="niFpgaDdsAccum.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/siggen/SquareWave/templates/niFpgaDdsAccum.vi"/>
 					<Item Name="Not Found Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Not Found Dialog.vi"/>
+					<Item Name="ROI Descriptor" Type="VI" URL="/&lt;vilib&gt;/vision/Image Controls.llb/ROI Descriptor"/>
 					<Item Name="Search and Replace Pattern.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Search and Replace Pattern.vi"/>
 					<Item Name="Set Bold Text.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Set Bold Text.vi"/>
 					<Item Name="Set String Value.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Set String Value.vi"/>
 					<Item Name="Simple Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Simple Error Handler.vi"/>
+					<Item Name="Space Constant.vi" Type="VI" URL="/&lt;vilib&gt;/dlg_ctls.llb/Space Constant.vi"/>
 					<Item Name="TagReturnType.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/TagReturnType.ctl"/>
 					<Item Name="Three Button Dialog CORE.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Three Button Dialog CORE.vi"/>
 					<Item Name="Three Button Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Three Button Dialog.vi"/>
@@ -7522,6 +7870,8 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
 				<Item Name="SerialServer.vi" Type="VI" URL="../Common/Serial/SerialServer.vi"/>
 				<Item Name="Simulation Settings Cluster.ctl" Type="VI" URL="../Host/Simulation/Simulation Settings Cluster.ctl"/>
 				<Item Name="Simulation Settings Global.vi" Type="VI" URL="../Host/Globals/Simulation Settings Global.vi"/>
+				<Item Name="Status FG Enum.ctl" Type="VI" URL="../Host/System Status/Status FG Enum.ctl"/>
+				<Item Name="Status FG.vi" Type="VI" URL="../Host/System Status/Status FG.vi"/>
 				<Item Name="Temporary Image Space.vi" Type="VI" URL="../Common/Image Analysis/Temporary Image Space.vi"/>
 				<Item Name="Tick Count Reset.vi" Type="VI" URL="../FPGA/Globals/Tick Count Reset.vi"/>
 				<Item Name="Tick Count.vi" Type="VI" URL="../FPGA/Globals/Tick Count.vi"/>
@@ -7561,9 +7911,6 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
 				</Item>
 			</Item>
 		</Item>
-		<Item Name="Test Image Display.vi" Type="VI" URL="../Test Compiliation/Test Image Display.vi"/>
-		<Item Name="Test Overlay Sector.vi" Type="VI" URL="../Test Compiliation/Test Overlay Sector.vi"/>
-		<Item Name="Test Sim Fill FIFO.vi" Type="VI" URL="../Test Sim Fill FIFO.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
@@ -7752,7 +8099,7 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
 				<Item Name="IMAQ GetPalette" Type="VI" URL="/&lt;vilib&gt;/vision/Display.llb/IMAQ GetPalette"/>
 				<Item Name="IMAQ Image.ctl" Type="VI" URL="/&lt;vilib&gt;/vision/Image Controls.llb/IMAQ Image.ctl"/>
 				<Item Name="IMAQ ImageToArray" Type="VI" URL="/&lt;vilib&gt;/vision/Basics.llb/IMAQ ImageToArray"/>
-				<Item Name="IMAQ Overlay Points" Type="VI" URL="/&lt;vilib&gt;/vision/Overlay.llb/IMAQ Overlay Points"/>
+				<Item Name="IMAQ Overlay ROI" Type="VI" URL="/&lt;vilib&gt;/vision/Overlay.llb/IMAQ Overlay ROI"/>
 				<Item Name="IMAQ Read Image And Vision Info" Type="VI" URL="/&lt;vilib&gt;/vision/Files1.llb/IMAQ Read Image And Vision Info"/>
 				<Item Name="IMAQ ReadFile" Type="VI" URL="/&lt;vilib&gt;/vision/Files.llb/IMAQ ReadFile"/>
 				<Item Name="IMAQ WindClose" Type="VI" URL="/&lt;vilib&gt;/vision/Display.llb/IMAQ WindClose"/>
@@ -7778,6 +8125,7 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
 				<Item Name="NI_LVConfig.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/config.llb/NI_LVConfig.lvlib"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 				<Item Name="NI_Vision_Development_Module.lvlib" Type="Library" URL="/&lt;vilib&gt;/vision/NI_Vision_Development_Module.lvlib"/>
+				<Item Name="niFpgaDdsAccum.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/siggen/SquareWave/templates/niFpgaDdsAccum.vi"/>
 				<Item Name="niLvFPGAUserSpecifiedEmulationVISupport.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/rvi/customViForEmulation/niLvFPGAUserSpecifiedEmulationVISupport.lvclass"/>
 				<Item Name="Not A Semaphore.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Not A Semaphore.vi"/>
 				<Item Name="Not Found Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Not Found Dialog.vi"/>
@@ -7802,20 +8150,53 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
 				<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/VariantDataType/VariantType.lvlib"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
+			<Item Name="1 Tap 8-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/1 Tap 8-Bit.vi"/>
+			<Item Name="1 Tap 10-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/1 Tap 10-Bit.vi"/>
+			<Item Name="1 Tap 12-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/1 Tap 12-Bit.vi"/>
+			<Item Name="1 Tap 14-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/1 Tap 14-Bit.vi"/>
+			<Item Name="1 Tap 16-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/1 Tap 16-Bit.vi"/>
+			<Item Name="1 Tap 24-Bit RGB.vi" Type="VI" URL="../Common/CL Data to Pixels/1 Tap 24-Bit RGB.vi"/>
+			<Item Name="1 Tap 30-Bit RGB.vi" Type="VI" URL="../Common/CL Data to Pixels/1 Tap 30-Bit RGB.vi"/>
+			<Item Name="1 Tap 36-Bit RGB.vi" Type="VI" URL="../Common/CL Data to Pixels/1 Tap 36-Bit RGB.vi"/>
+			<Item Name="1 Tap 42-Bit RGB.vi" Type="VI" URL="../Common/CL Data to Pixels/1 Tap 42-Bit RGB.vi"/>
+			<Item Name="1 Tap 48-Bit RGB.vi" Type="VI" URL="../Common/CL Data to Pixels/1 Tap 48-Bit RGB.vi"/>
+			<Item Name="2 Tap 8-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/2 Tap 8-Bit.vi"/>
+			<Item Name="2 Tap 10-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/2 Tap 10-Bit.vi"/>
+			<Item Name="2 Tap 12-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/2 Tap 12-Bit.vi"/>
+			<Item Name="2 Tap 14-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/2 Tap 14-Bit.vi"/>
+			<Item Name="2 Tap 16-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/2 Tap 16-Bit.vi"/>
+			<Item Name="2 Tap 24-Bit RGB.vi" Type="VI" URL="../Common/CL Data to Pixels/2 Tap 24-Bit RGB.vi"/>
+			<Item Name="3 Tap 8-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/3 Tap 8-Bit.vi"/>
+			<Item Name="3 Tap 10-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/3 Tap 10-Bit.vi"/>
+			<Item Name="3 Tap 12-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/3 Tap 12-Bit.vi"/>
+			<Item Name="3 Tap 14-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/3 Tap 14-Bit.vi"/>
+			<Item Name="3 Tap 16-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/3 Tap 16-Bit.vi"/>
+			<Item Name="4 Tap 8-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/4 Tap 8-Bit.vi"/>
+			<Item Name="4 Tap 10-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/4 Tap 10-Bit.vi"/>
+			<Item Name="4 Tap 12-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/4 Tap 12-Bit.vi"/>
+			<Item Name="8 Tap 8-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/8 Tap 8-Bit.vi"/>
+			<Item Name="10 Tap 8-Bit.vi" Type="VI" URL="../Common/CL Data to Pixels/10 Tap 8-Bit.vi"/>
+			<Item Name="10-Tap 8-bit Cluster.ctl" Type="VI" URL="../Common/CL Data to Pixels/10-Tap 8-bit Cluster.ctl"/>
 			<Item Name="10-Tap8-bitwith_DRAM.lvbitx" Type="Document" URL="../FPGA Bitfiles/10-Tap8-bitwith_DRAM.lvbitx"/>
 			<Item Name="Accumulated Sector Cluster.ctl" Type="VI" URL="../FPGA/Sector/Accumulate/Accumulated Sector Cluster.ctl"/>
+			<Item Name="Acquisition State Machine.vi" Type="VI" URL="../Common/Acquisition State Machine.vi"/>
 			<Item Name="CAMERA NAME ENUM.ctl" Type="VI" URL="../Image Acquisition/CAMERA NAME ENUM.ctl"/>
+			<Item Name="Check If Space Is Available in Sector Pixel FIFO.vi" Type="VI" URL="../FPGA/Sector/Accumulate/Check If Space Is Available in Sector Pixel FIFO.vi"/>
 			<Item Name="CL Configuration.ctl" Type="VI" URL="../Common/CL Configuration.ctl"/>
+			<Item Name="CL Data to Pixels.vi" Type="VI" URL="../Common/CL Data to Pixels.vi"/>
 			<Item Name="CL Signal Mapping.ctl" Type="VI" URL="../Common/CL Signal Mapping.ctl"/>
 			<Item Name="Config file functional global for GUIs.vi" Type="VI" URL="../Common/File IO/Config/Config file functional global for GUIs.vi"/>
 			<Item Name="Config file functional global mode enum.ctl" Type="VI" URL="../Common/File IO/Config/Config file functional global mode enum.ctl"/>
 			<Item Name="Config file functional global modes.vi" Type="VI" URL="../Common/File IO/Config/Config file functional global modes.vi"/>
+			<Item Name="Counter.vi" Type="VI" URL="../Common/Counter.vi"/>
+			<Item Name="Determine If Left or Right Sector.vi" Type="VI" URL="../FPGA/Sector/Accumulate/Determine If Left or Right Sector.vi"/>
 			<Item Name="Digital Line Status Global.vi" Type="VI" URL="../Digital IO/Digital Line Status Global.vi"/>
 			<Item Name="EIO_ResourceConfig.ctl" Type="VI" URL="/&lt;vilib&gt;/eio/EIO_ResourceConfig.ctl"/>
 			<Item Name="FileIO lib.lvlib" Type="Library" URL="../Common/File IO/FileIO lib.lvlib"/>
 			<Item Name="Find project reference.vi" Type="VI" URL="../Common/Find All Vis/Find project reference.vi"/>
 			<Item Name="For Each Enum.vi" Type="VI" URL="../Common/Enums/For Each Enum.vi"/>
 			<Item Name="FPGA Frame Grabbing.lvlib" Type="Library" URL="../FPGA/FPGA Frame Grabbing.lvlib"/>
+			<Item Name="FPGA Image Processing.lvlib" Type="Library" URL="../FPGA/FPGA Image Processing.lvlib"/>
 			<Item Name="FPGA_UART_ChangeBaudRate.vi" Type="VI" URL="../Common/Serial/FPGA_UART.llb/FPGA_UART_ChangeBaudRate.vi"/>
 			<Item Name="FPGA_UART_ReadByte.vi" Type="VI" URL="../Common/Serial/FPGA_UART.llb/FPGA_UART_ReadByte.vi"/>
 			<Item Name="FPGA_UART_WriteByte.vi" Type="VI" URL="../Common/Serial/FPGA_UART.llb/FPGA_UART_WriteByte.vi"/>
@@ -7862,20 +8243,24 @@ PCIe-7842R/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCIE_7
 			<Item Name="nivissvc.dll" Type="Document" URL="nivissvc.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Pixel Location Global.vi" Type="VI" URL="../FPGA/Globals/Pixel Location Global.vi"/>
 			<Item Name="ProjectName enum.ctl" Type="VI" URL="../Common/File IO/Config/ProjectName enum.ctl"/>
 			<Item Name="Read write mode.ctl" Type="VI" URL="../Common/File IO/INI/Read write mode.ctl"/>
 			<Item Name="Reentrant Config file functional global for GUI elements.vi" Type="VI" URL="../Common/File IO/Config/Reentrant Config file functional global for GUI elements.vi"/>
 			<Item Name="Rising Edge Detect.vi" Type="VI" URL="../Common/Rising Edge Detect.vi"/>
 			<Item Name="Sector Parameter Cluster.ctl" Type="VI" URL="../FPGA/Sector/Accumulate/Sector Parameter Cluster.ctl"/>
+			<Item Name="Sector Parameter Global.vi" Type="VI" URL="../FPGA/Globals/Sector Parameter Global.vi"/>
+			<Item Name="Serial Interface.vi" Type="VI" URL="../Common/Serial Interface.vi"/>
 			<Item Name="Serial Port Settings Cluster.ctl" Type="VI" URL="../Host/Serial/Serial Port Settings Cluster.ctl"/>
 			<Item Name="SerialServer.vi" Type="VI" URL="../Common/Serial/SerialServer.vi"/>
 			<Item Name="shell32.dll" Type="Document" URL="shell32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Single Sector Pixel Cluster.ctl" Type="VI" URL="../FPGA/Sector/Accumulate/Single Sector Pixel Cluster.ctl"/>
 			<Item Name="State Machine Lib.lvlib" Type="Library" URL="../Common/State Machines/State Machine Lib.lvlib"/>
 			<Item Name="Temporary Image Space.vi" Type="VI" URL="../Common/Image Analysis/Temporary Image Space.vi"/>
-			<Item Name="Test Sector Cluster.ctl" Type="VI" URL="../Test Compiliation/Test Sector Cluster.ctl"/>
 			<Item Name="Timing Lib.lvlib" Type="Library" URL="../Common/Timing/Timing Lib.lvlib"/>
+			<Item Name="Update Current Pixel Locations.vi" Type="VI" URL="../FPGA/Sector/Accumulate/Update Current Pixel Locations.vi"/>
 			<Item Name="User interface config file selector enum.ctl" Type="VI" URL="../Common/File IO/Config/User interface config file selector enum.ctl"/>
 			<Item Name="Utility Lib.lvlib" Type="Library" URL="../Common/Utility/Utility Lib.lvlib"/>
 			<Item Name="WingBeatAnalyzer_FPGATargetSim_10_2.lvbitx" Type="Document" URL="../FPGA Bitfiles/WingBeatAnalyzer_FPGATargetSim_10_2.lvbitx"/>
