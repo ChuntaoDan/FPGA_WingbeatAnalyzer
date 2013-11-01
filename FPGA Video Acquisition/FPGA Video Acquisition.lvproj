@@ -106,10 +106,8 @@ Additionally, the example demonstrates the serial server, which allows third-par
 				<Item Name="Rising Edge Detect.vi" Type="VI" URL="../Common/Rising Edge Detect.vi"/>
 				<Item Name="Serial Interface.vi" Type="VI" URL="../Common/Serial Interface.vi"/>
 			</Item>
-			<Item Name="FPGA Bitfiles" Type="Folder">
-				<Item Name="10-Tap8-bitwith_DRAM.lvbitx" Type="Document" URL="../FPGA Bitfiles/10-Tap8-bitwith_DRAM.lvbitx"/>
-				<Item Name="10-Tap8-bitwithout_DRAM.lvbitx" Type="Document" URL="../FPGA Bitfiles/10-Tap8-bitwithout_DRAM.lvbitx"/>
-				<Item Name="ImageAcquisitionWithDRAM.lvbitx" Type="Document" URL="../FPGA Bitfiles/ImageAcquisitionWithDRAM.lvbitx"/>
+			<Item Name="FPGA Bitfiles" Type="Folder" URL="../FPGA Bitfiles">
+				<Property Name="NI.DISK" Type="Bool">true</Property>
 			</Item>
 			<Item Name="Network Stream" Type="Folder">
 				<Item Name="Decode Binary Image File.vi" Type="VI" URL="../Network Stream/Decode Binary Image File.vi"/>
@@ -5341,6 +5339,7 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
+			<Item Name="10-Tap8-bitCamer_FPGATarget_10-Tap8-bitCamer_IaTe8mhmqVk.lvbitx" Type="Document" URL="../../../../LabVIEW/Vision/Vision-RIO/Vision-RIO/10-Tap 8-bit Camera with DRAM/FPGA Bitfiles/10-Tap8-bitCamer_FPGATarget_10-Tap8-bitCamer_IaTe8mhmqVk.lvbitx"/>
 			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -5351,6 +5350,20 @@ PCIe-1473R/RioClk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSPCI
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 		</Item>
-		<Item Name="Build Specifications" Type="Build"/>
+		<Item Name="Build Specifications" Type="Build">
+			<Item Name="FPGA Video Acquisition 20131031 Zip File" Type="Zip File">
+				<Property Name="Absolute[0]" Type="Bool">false</Property>
+				<Property Name="BuildName" Type="Str">FPGA Video Acquisition 20131031 Zip File</Property>
+				<Property Name="Comments" Type="Str"></Property>
+				<Property Name="DestinationID[0]" Type="Str">{E80A4F43-703C-43B7-9392-9F7DAE1A1A9D}</Property>
+				<Property Name="DestinationItemCount" Type="Int">1</Property>
+				<Property Name="DestinationName[0]" Type="Str">Destination Directory</Property>
+				<Property Name="IncludedItemCount" Type="Int">1</Property>
+				<Property Name="IncludedItems[0]" Type="Ref">/My Computer</Property>
+				<Property Name="IncludeProject" Type="Bool">true</Property>
+				<Property Name="Path[0]" Type="Path">../../builds/FPGA Video Acquisition/FPGA Video Acquisition 20131031 Zip File/FPGA Video Acquisition.zip</Property>
+				<Property Name="ZipBase" Type="Str">NI_zipbasedefault</Property>
+			</Item>
+		</Item>
 	</Item>
 </Project>
