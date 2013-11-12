@@ -1257,7 +1257,7 @@ FullNumberOfSyncRegistersForReadInProject=0;resource=/DRAM Bank 0/SignalList/Ful
             <RelativeToLabVIEW>C:\Users\Chuntao\LabVIEW\Vision\Vision-RIO\Vision-RIO\Common\CLIPs\Pack256To64.xml</RelativeToLabVIEW>
             <RelativeToNiPubDocs>C:\Users\Chuntao\LabVIEW\Vision\Vision-RIO\Vision-RIO\Common\CLIPs\Pack256To64.xml</RelativeToNiPubDocs>
             <RelativeToNiSharedDir>..\..\..\Users\Chuntao\LabVIEW\Vision\Vision-RIO\Vision-RIO\Common\CLIPs\Pack256To64.xml</RelativeToNiSharedDir>
-            <RelativeToProject>..\..\..\..\Chuntao\LabVIEW\Vision\Vision-RIO\Vision-RIO\Common\CLIPs\Pack256To64.xml</RelativeToProject>
+            <RelativeToProject>..\..\..\LabVIEW\Vision\Vision-RIO\Vision-RIO\Common\CLIPs\Pack256To64.xml</RelativeToProject>
             <Valid>true</Valid>
          </DeclarationPaths>
          <FormatVersion>1.1</FormatVersion>
@@ -1395,7 +1395,7 @@ FullNumberOfSyncRegistersForReadInProject=0;resource=/DRAM Bank 0/SignalList/Ful
             <RelativeToLabVIEW>C:\Users\Chuntao\LabVIEW\Vision\Vision-RIO\Vision-RIO\Common\CLIPs\Pack80To256.xml</RelativeToLabVIEW>
             <RelativeToNiPubDocs>C:\Users\Chuntao\LabVIEW\Vision\Vision-RIO\Vision-RIO\Common\CLIPs\Pack80To256.xml</RelativeToNiPubDocs>
             <RelativeToNiSharedDir>..\..\..\Users\Chuntao\LabVIEW\Vision\Vision-RIO\Vision-RIO\Common\CLIPs\Pack80To256.xml</RelativeToNiSharedDir>
-            <RelativeToProject>..\..\..\..\Chuntao\LabVIEW\Vision\Vision-RIO\Vision-RIO\Common\CLIPs\Pack80To256.xml</RelativeToProject>
+            <RelativeToProject>..\..\..\LabVIEW\Vision\Vision-RIO\Vision-RIO\Common\CLIPs\Pack80To256.xml</RelativeToProject>
             <Valid>true</Valid>
          </DeclarationPaths>
          <FormatVersion>1.1</FormatVersion>
