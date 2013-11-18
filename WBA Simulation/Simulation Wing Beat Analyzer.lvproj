@@ -571,13 +571,13 @@ Additionally, the example demonstrates the serial server, which allows third-par
 				<Item Name="SerialServer.vi" Type="VI" URL="../Common/Serial/SerialServer.vi"/>
 				<Item Name="Simulation Settings Cluster.ctl" Type="VI" URL="../Host/Simulation/Simulation Settings Cluster.ctl"/>
 				<Item Name="Simulation Settings Global.vi" Type="VI" URL="../Host/Globals/Simulation Settings Global.vi"/>
+				<Item Name="Simulation_WBA.lvbitx" Type="Document" URL="../FPGA Bitfiles/Simulation_WBA.lvbitx"/>
 				<Item Name="Status FG Enum.ctl" Type="VI" URL="../Host/System Status/Status FG Enum.ctl"/>
 				<Item Name="Status FG.vi" Type="VI" URL="../Host/System Status/Status FG.vi"/>
 				<Item Name="Temporary Image Space.vi" Type="VI" URL="../Common/Image Analysis/Temporary Image Space.vi"/>
 				<Item Name="Tick Count Reset.vi" Type="VI" URL="../FPGA/Globals/Tick Count Reset.vi"/>
 				<Item Name="Tick Count.vi" Type="VI" URL="../FPGA/Globals/Tick Count.vi"/>
 				<Item Name="Timing Lib.lvlib" Type="Library" URL="../Common/Timing/Timing Lib.lvlib"/>
-				<Item Name="WingBeatAnalyzer_FPGATargetSim_10_2.lvbitx" Type="Document" URL="../FPGA Bitfiles/WingBeatAnalyzer_FPGATargetSim_10_2.lvbitx"/>
 			</Item>
 			<Item Name="Build Specifications" Type="Build">
 				<Item Name="8-Tap 8-bit Camera without DRAM (FPGA-SIM)" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
