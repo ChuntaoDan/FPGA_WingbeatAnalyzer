@@ -1,0 +1,31 @@
+GUI Functions
+Utility functions
+-Get caller if not a ref, error on no caller
+-find controls by name
+-Hide/show parent
+-hide/show grandparent
+
+Window:
+Set origin to 0,0
+Window Size (Relative/absolute)
+Window Position (Relative/Absolute)
+Fade in, Fade out
+Window Style
+Set all text font.
+
+
+menu
+-Hide Elements
+-Show Elements
+-Toggle check
+-Enable elements
+-Disable elements
+-List Menu items
+
+Controls
+-Show controls by mane
+-hide controls by name
+-disable controls by name
+-enable controls by name
+-gray controls by name
+
