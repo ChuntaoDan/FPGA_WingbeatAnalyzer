@@ -5670,7 +5670,6 @@ FullNumberOfSyncRegistersForReadInProject=0;resource=/DRAM Bank 0/SignalList/Ful
 				</Item>
 				<Item Name="Tick Count Reset.vi" Type="VI" URL="../FPGA/Globals/Tick Count Reset.vi"/>
 				<Item Name="Tick Count.vi" Type="VI" URL="../FPGA/Globals/Tick Count.vi"/>
-				<Item Name="WBA256Sectors_FPGATarget.lvbitx" Type="Document" URL="../FPGA Bitfiles/WBA256Sectors_FPGATarget.lvbitx"/>
 			</Item>
 			<Item Name="Build Specifications" Type="Build">
 				<Item Name="Test IO" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
@@ -5888,6 +5887,8 @@ FullNumberOfSyncRegistersForReadInProject=0;resource=/DRAM Bank 0/SignalList/Ful
 				<Item Name="Details Display Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Details Display Dialog.vi"/>
 				<Item Name="DialogType.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/DialogType.ctl"/>
 				<Item Name="DialogTypeEnum.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/DialogTypeEnum.ctl"/>
+				<Item Name="DllFxpDivTemp_sub.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/FXPMathLib/FxpDiv/simVIs/DllFxpDivTemp_sub.vi"/>
+				<Item Name="DllFxpRectToPolarTemp_sub.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/FXPMathLib/FxpRectToPolar/simVIs/DllFxpRectToPolarTemp_sub.vi"/>
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
 				<Item Name="Error Code Database.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Code Database.vi"/>
 				<Item Name="ErrWarn.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/ErrWarn.ctl"/>
@@ -5956,6 +5957,10 @@ FullNumberOfSyncRegistersForReadInProject=0;resource=/DRAM Bank 0/SignalList/Ful
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 				<Item Name="NI_PtbyPt.lvlib" Type="Library" URL="/&lt;vilib&gt;/ptbypt/NI_PtbyPt.lvlib"/>
 				<Item Name="NI_Vision_Development_Module.lvlib" Type="Library" URL="/&lt;vilib&gt;/vision/NI_Vision_Development_Module.lvlib"/>
+				<Item Name="niFpgaContainerGetUniqueNameForEmu.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/DataTransferAndStorage/Container/common/niFpgaContainerGetUniqueNameForEmu.vi"/>
+				<Item Name="nifxpmath_Div_SimConfig.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/FXPMathLib/FxpDiv/subVIs/nifxpmath_Div_SimConfig.ctl"/>
+				<Item Name="nifxpmath_RectToPolar_SimConfig.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/FXPMathLib/FxpRectToPolar/subVIs/nifxpmath_RectToPolar_SimConfig.ctl"/>
+				<Item Name="nirvififoEmulationSetSize.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/FIFO/Fifo_Resource/nirvififoEmulationSetSize.vi"/>
 				<Item Name="Not A Semaphore.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Not A Semaphore.vi"/>
 				<Item Name="Not Found Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Not Found Dialog.vi"/>
 				<Item Name="Obtain Semaphore Reference.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Obtain Semaphore Reference.vi"/>
@@ -6026,6 +6031,8 @@ FullNumberOfSyncRegistersForReadInProject=0;resource=/DRAM Bank 0/SignalList/Ful
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="niLvFpga_AcknowledgeIrq_PCIe-1473R-LX110.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/PCIe-1473R-LX110/niLvFpga_AcknowledgeIrq_PCIe-1473R-LX110.vi"/>
+			<Item Name="niLvFpga_WaitOnIrq_PCIe-1473R-LX110.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/PCIe-1473R-LX110/niLvFpga_WaitOnIrq_PCIe-1473R-LX110.vi"/>
 			<Item Name="nivision.dll" Type="Document" URL="nivision.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -6050,6 +6057,10 @@ FullNumberOfSyncRegistersForReadInProject=0;resource=/DRAM Bank 0/SignalList/Ful
 			</Item>
 			<Item Name="Single Sector Pixel Cluster.ctl" Type="VI" URL="../FPGA/Sector/Accumulate/Single Sector Pixel Cluster.ctl"/>
 			<Item Name="State Machine Lib.lvlib" Type="Library" URL="../Common/State Machines/State Machine Lib.lvlib"/>
+			<Item Name="StockFPGA_InlinedAdjustHostInterfaceError.vi" Type="VI" URL="../../../../../../../../Program Files/National Instruments/LabVIEW 2013/Targets/NI/FPGA/StockFPGA_IntfPrivate/ScriptTemplates/StockFPGA_InlinedAdjustHostInterfaceError.vi"/>
+			<Item Name="StockFPGA_InlinedMethodWaitForSingleIRQ.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/interface/nirviMethod/StockFPGA_InlinedMethodWaitForSingleIRQ.vi"/>
+			<Item Name="StockFPGA_InlinedWaitFor1OrMoreIRQs.vi" Type="VI" URL="../../../../../../../../Program Files/National Instruments/LabVIEW 2013/Targets/NI/FPGA/StockFPGA_IntfPrivate/ScriptTemplates/StockFPGA_InlinedWaitFor1OrMoreIRQs.vi"/>
+			<Item Name="StockFPGA_PlugInOptionalWaitOnIrq.vi" Type="VI" URL="../../../../../../../../Program Files/National Instruments/LabVIEW 2013/Targets/NI/FPGA/StockFPGA_IntfPrivate/ScriptTemplates/StockFPGA_PlugInOptionalWaitOnIrq.vi"/>
 			<Item Name="Temporary Image Space.vi" Type="VI" URL="../Common/Image Analysis/Temporary Image Space.vi"/>
 			<Item Name="Timing Lib.lvlib" Type="Library" URL="../Common/Timing/Timing Lib.lvlib"/>
 			<Item Name="Update Current Pixel Locations.vi" Type="VI" URL="../FPGA/Sector/Accumulate/Update Current Pixel Locations.vi"/>
