@@ -4171,6 +4171,7 @@ FullNumberOfSyncRegistersForReadInProject=0;resource=/DRAM Bank 0/SignalList/Ful
 				<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
 					<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 				</Item>
+				<Item Name="WBA256Sectors_FPGATarget.lvbitx" Type="Document" URL="../FPGA Bitfiles/WBA256Sectors_FPGATarget.lvbitx"/>
 				<Item Name="Processed Data.ctl" Type="VI" URL="/&lt;vilib&gt;/Native 3D Graph/xcontrol/Processed Data.ctl"/>
 				<Item Name="find_vertex_min_max.vi" Type="VI" URL="/&lt;vilib&gt;/Native 3D Graph/find_vertex_min_max.vi"/>
 				<Item Name="make_color_index_array.vi" Type="VI" URL="/&lt;vilib&gt;/Native 3D Graph/make_color_index_array.vi"/>
@@ -5989,19 +5990,14 @@ FullNumberOfSyncRegistersForReadInProject=0;resource=/DRAM Bank 0/SignalList/Ful
 			<Item Name="10-Tap8-bitwith_DRAM.lvbitx" Type="Document" URL="../FPGA Bitfiles/10-Tap8-bitwith_DRAM.lvbitx"/>
 			<Item Name="Accumulated Sector Cluster.ctl" Type="VI" URL="../FPGA/Sector/Accumulate/Accumulated Sector Cluster.ctl"/>
 			<Item Name="Assign Pixel to Wing Sector (FPGA).vi" Type="VI" URL="../FPGA/Sector/Accumulate/Assign Pixel to Wing Sector (FPGA).vi"/>
-			<Item Name="CAMERA NAME ENUM.ctl" Type="VI" URL="../Image Acquisition/CAMERA NAME ENUM.ctl"/>
 			<Item Name="Check If Space Is Available in Sector Pixel FIFO.vi" Type="VI" URL="../FPGA/Sector/Accumulate/Check If Space Is Available in Sector Pixel FIFO.vi"/>
 			<Item Name="CL Configuration.ctl" Type="VI" URL="../Common/CL Configuration.ctl"/>
 			<Item Name="CL Signal Mapping.ctl" Type="VI" URL="../Common/CL Signal Mapping.ctl"/>
-			<Item Name="Compress to Jpeg2000 3D.vi" Type="VI" URL="../Host/PICTools/VIs/Compress to Jpeg2000 3D.vi"/>
 			<Item Name="Config file functional global for GUIs.vi" Type="VI" URL="../Common/File IO/Config/Config file functional global for GUIs.vi"/>
 			<Item Name="Config file functional global mode enum.ctl" Type="VI" URL="../Common/File IO/Config/Config file functional global mode enum.ctl"/>
 			<Item Name="Config file functional global modes.vi" Type="VI" URL="../Common/File IO/Config/Config file functional global modes.vi"/>
 			<Item Name="Determine If Left or Right Sector.vi" Type="VI" URL="../FPGA/Sector/Accumulate/Determine If Left or Right Sector.vi"/>
-			<Item Name="Digital Line Status Global.vi" Type="VI" URL="../Digital IO/Digital Line Status Global.vi"/>
-			<Item Name="Error ring typedef.ctl" Type="VI" URL="../Host/PICTools/VIs/Error ring typedef.ctl"/>
 			<Item Name="FileIO lib.lvlib" Type="Library" URL="../Common/File IO/FileIO lib.lvlib"/>
-			<Item Name="Find first completed jp2k 3D file set.vi" Type="VI" URL="../Host/File IO/JP2000 3D control/Find first completed jp2k 3D file set.vi"/>
 			<Item Name="Find project reference.vi" Type="VI" URL="../Common/Find All Vis/Find project reference.vi"/>
 			<Item Name="For Each Enum.vi" Type="VI" URL="../Common/Enums/For Each Enum.vi"/>
 			<Item Name="FPGA Frame Grabbing (Host).vi" Type="VI" URL="../FPGA/FPGA Frame Grabbing (Host).vi"/>
@@ -6021,9 +6017,6 @@ FullNumberOfSyncRegistersForReadInProject=0;resource=/DRAM Bank 0/SignalList/Ful
 			<Item Name="INI Read write Path storage.vi" Type="VI" URL="../Common/File IO/INI/INI Read write Path storage.vi"/>
 			<Item Name="INI Read write path.vi" Type="VI" URL="../Common/File IO/INI/INI Read write path.vi"/>
 			<Item Name="Interloop MessageQ.lvlib" Type="Library" URL="../Common/Interloop MessageQ/Interloop MessageQ.lvlib"/>
-			<Item Name="Jp2k 3D image file sets controller mode enum.ctl" Type="VI" URL="../Host/File IO/JP2000 3D control/Jp2k 3D image file sets controller mode enum.ctl"/>
-			<Item Name="JP2000 3D Images to log Buffer FG.vi" Type="VI" URL="../Host/File IO/JP2000 3D control/JP2000 3D Images to log Buffer FG.vi"/>
-			<Item Name="Message que instance modes enum.ctl" Type="VI" URL="../../Common/Interloop MessageQ/Message que instance modes enum.ctl"/>
 			<Item Name="Misc static globals.vi" Type="VI" URL="../Project Vis/Globals/Misc static globals.vi"/>
 			<Item Name="Missing Placeholder.vi" Type="VI" URL="../Common/Missing Placeholder.vi"/>
 			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
@@ -6032,20 +6025,18 @@ FullNumberOfSyncRegistersForReadInProject=0;resource=/DRAM Bank 0/SignalList/Ful
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="niLvFpga_AcknowledgeIrq_PCIe-1473R-LX110.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/PCIe-1473R-LX110/niLvFpga_AcknowledgeIrq_PCIe-1473R-LX110.vi"/>
+			<Item Name="niLvFpga_WaitOnIrq_PCIe-1473R-LX110.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/PCIe-1473R-LX110/niLvFpga_WaitOnIrq_PCIe-1473R-LX110.vi"/>
 			<Item Name="nivision.dll" Type="Document" URL="nivision.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="nivissvc.dll" Type="Document" URL="nivissvc.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Non-announced error tracker modes enum.ctl" Type="VI" URL="../Host/Error Handler/Non-announced error tracker modes enum.ctl"/>
-			<Item Name="Non-announced error tracker module.vi" Type="VI" URL="../Host/Error Handler/Non-announced error tracker module.vi"/>
-			<Item Name="Parallel image logger globals.vi" Type="VI" URL="../Host/File IO/Dynamic Parallel Logging/Parallel image logger globals.vi"/>
 			<Item Name="Pixel Location Global.vi" Type="VI" URL="../FPGA/Globals/Pixel Location Global.vi"/>
 			<Item Name="ProjectName enum.ctl" Type="VI" URL="../Common/File IO/Config/ProjectName enum.ctl"/>
 			<Item Name="Read write mode.ctl" Type="VI" URL="../Common/File IO/INI/Read write mode.ctl"/>
 			<Item Name="Reentrant Config file functional global for GUI elements.vi" Type="VI" URL="../Common/File IO/Config/Reentrant Config file functional global for GUI elements.vi"/>
-			<Item Name="Return image references for file set.vi" Type="VI" URL="../Host/File IO/JP2000 3D control/Return image references for file set.vi"/>
 			<Item Name="Rising Edge Detect.vi" Type="VI" URL="../Common/Rising Edge Detect.vi"/>
 			<Item Name="Sector Parameter Cluster.ctl" Type="VI" URL="../FPGA/Sector/Accumulate/Sector Parameter Cluster.ctl"/>
 			<Item Name="Sector Parameter Global.vi" Type="VI" URL="../FPGA/Globals/Sector Parameter Global.vi"/>
@@ -6056,6 +6047,10 @@ FullNumberOfSyncRegistersForReadInProject=0;resource=/DRAM Bank 0/SignalList/Ful
 			</Item>
 			<Item Name="Single Sector Pixel Cluster.ctl" Type="VI" URL="../FPGA/Sector/Accumulate/Single Sector Pixel Cluster.ctl"/>
 			<Item Name="State Machine Lib.lvlib" Type="Library" URL="../Common/State Machines/State Machine Lib.lvlib"/>
+			<Item Name="StockFPGA_InlinedAdjustHostInterfaceError.vi" Type="VI" URL="../../../../../../../../Program Files/National Instruments/LabVIEW 2013/Targets/NI/FPGA/StockFPGA_IntfPrivate/ScriptTemplates/StockFPGA_InlinedAdjustHostInterfaceError.vi"/>
+			<Item Name="StockFPGA_InlinedMethodWaitForSingleIRQ.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/interface/nirviMethod/StockFPGA_InlinedMethodWaitForSingleIRQ.vi"/>
+			<Item Name="StockFPGA_InlinedWaitFor1OrMoreIRQs.vi" Type="VI" URL="../../../../../../../../Program Files/National Instruments/LabVIEW 2013/Targets/NI/FPGA/StockFPGA_IntfPrivate/ScriptTemplates/StockFPGA_InlinedWaitFor1OrMoreIRQs.vi"/>
+			<Item Name="StockFPGA_PlugInOptionalWaitOnIrq.vi" Type="VI" URL="../../../../../../../../Program Files/National Instruments/LabVIEW 2013/Targets/NI/FPGA/StockFPGA_IntfPrivate/ScriptTemplates/StockFPGA_PlugInOptionalWaitOnIrq.vi"/>
 			<Item Name="Temporary Image Space.vi" Type="VI" URL="../Common/Image Analysis/Temporary Image Space.vi"/>
 			<Item Name="Timing Lib.lvlib" Type="Library" URL="../Common/Timing/Timing Lib.lvlib"/>
 			<Item Name="Update Current Pixel Locations.vi" Type="VI" URL="../FPGA/Sector/Accumulate/Update Current Pixel Locations.vi"/>
