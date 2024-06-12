@@ -29,7 +29,7 @@ twitter_username: ChuntaoDan
 github_username:  ChuntaoDan
 
 # Build settings
-theme: Cayman
+# theme: Cayman
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
   - jekyll-feed
