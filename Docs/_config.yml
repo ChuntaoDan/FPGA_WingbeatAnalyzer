@@ -21,18 +21,20 @@
 title: FPGA Wingbeat Analyzer
 email: danc@janelia.hhmi.org
 description: >- # this means to ignore newlines until "baseurl:"
-  This repo stores LabVIEW VIs for FPGA on-board high speed image processing and disk writing to enable low-latency wingbeat amplitude detection for closed-loop experiments.
+  high speed image processing for wingbeat amplitude detection in closed-loop flight experiments
 domain: "chuntaodan.github.io"
-baseurl: "/FPGA_WingbeatAnalyzer.github.io/" # the subpath of your site, e.g. /blog
+baseurl: "/FPGA_WingbeatAnalyzer/docs" # the subpath of your site, e.g. /blog
 url: "https://chuntaodan.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ChuntaoDan
 github_username:  ChuntaoDan
 
 # Build settings
-# theme: Cayman
+theme: jekyll-theme-cayman
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
   - jekyll-remote-theme
 
 # Exclude from processing.

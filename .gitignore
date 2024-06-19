@@ -1,3 +1,5 @@
 /FPGA Video Acquisition/*.aliases
 
 /FPGA Video Acquisition/Network Stream/*.lvlps
+
+Gemfile.lock
