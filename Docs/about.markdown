@@ -1,18 +1,22 @@
 ---
 layout: default
 title: About
-permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+This site provides the details of the FPGA Wingbeat Analyzer deployed in this publication: 
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+A neural circuit architecture for rapid learning in goal-directed navigation. Chuntao Dan, Brad K. Hulse, Ramya Kappagantula, Vivek Jayaraman, Ann M. Hermundstad. https://doi.org/10.1016/j.neuron.2024.04.036. (open access)
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+Motivation:
 
 
-[jekyll-organization]: https://github.com/jekyll
+
+The FPGA Wingbeat Analyzer system encompasses the following components:
+
+Hardware:
+
+Software:
+
+Instruction
+
+
