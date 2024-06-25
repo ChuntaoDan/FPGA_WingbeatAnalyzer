@@ -1,11 +1,9 @@
 - name: home
   link: /
-- name: about
-  link: /about.html
 - name: hardware
   link: /hardware.html
 - name: software
   link: /software.html
-- name: use
+- name: how to use
   link: /use.html
   
