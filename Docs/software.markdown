@@ -3,16 +3,21 @@ layout: default
 title: Software
 ---
 
-This section provides the details of the software used in the FPGA Wingbeat Analyzer system. 
+This section provides the details of the software components used in the FPGA Wingbeat Analyzer system. 
 
 
-LabVIEW:
+LabVIEW: Program the FPGA with 32-bit LabVIEW, Run with 64-bit labVIEW
 
-Camera UI:
+NI Vision Development Module 
+
+NI Device Drivers
+
+Camera Utility: Basler Pylon Driver Package
 
 Architecture:
 
 Key algorithms:
 
+Decompression:
 
 
